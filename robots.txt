@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gucci8916.github.io/hamazushi/sitemap.xml

@@ -89,6 +89,7 @@
       font-size: 16px;
       overscroll-behavior: none;      /* 限界を超えた引っ張り（バウンス）を抑制 */
       scroll-padding-top: 80px;       /* 固定ヘッダー分、アンカー移動先をずらす */
+      background: var(--color-ink);    /* 最上部・余白・オーバースクロール時を黒に */
     }
 
     body {
@@ -2217,6 +2218,7 @@
     /* ============================================
        サブページ共通（お品書き/ご法要/アクセス/求人）
     ============================================ */
+    body.subpage { background: var(--color-ink); }   /* ヘッダー裏の最上部を黒に */
     body.subpage main { padding-top: 73px; }   /* 固定ヘッダー分の余白 */
 
     .page-hero {

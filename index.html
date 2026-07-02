@@ -50,7 +50,7 @@
   <!-- Google Fonts: Noto Serif JP（和の格調）+ Noto Sans JP（可読性） -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 
   <style>
     /* ============================================
@@ -68,7 +68,7 @@
       --color-white:     #ffffff;
       --color-red:       #8b1a1a;   /* アクセント赤（定休日等） */
 
-      --font-serif:  'Noto Serif JP', serif;   /* 見出し・格調重視 */
+      --font-serif:  'Shippori Mincho B1', 'Noto Serif JP', serif;   /* 見出し・和の趣（しっぽり明朝） */
       --font-sans:   'Noto Sans JP', sans-serif; /* 本文・UI */
 
       --max-width: 1080px;
@@ -89,7 +89,6 @@
       font-size: 16px;
       overscroll-behavior: none;      /* 限界を超えた引っ張り（バウンス）を抑制 */
       scroll-padding-top: 80px;       /* 固定ヘッダー分、アンカー移動先をずらす */
-      background: var(--color-ink);    /* 最上部・余白・オーバースクロール時を黒に */
     }
 
     body {
@@ -2039,13 +2038,15 @@
         left: 0;
         right: 0;
         bottom: 0;
-        /* 手前に下端フェード（暗色へ）、背面に看板写真。境目を暗色に溶け込ませる */
+        /* 手前に下端フェード（暗色へ）、背面に看板写真。境目をより緩やかにぼかす */
         background-image:
           linear-gradient(to bottom,
-            rgba(26,26,24,0) 40%,
-            rgba(26,26,24,0.5) 52%,
-            rgba(26,26,24,0.92) 60%,
-            rgba(26,26,24,1) 66%),
+            rgba(26,26,24,0) 28%,
+            rgba(26,26,24,0.15) 40%,
+            rgba(26,26,24,0.4) 50%,
+            rgba(26,26,24,0.7) 60%,
+            rgba(26,26,24,0.92) 68%,
+            rgba(26,26,24,1) 76%),
           url('images/hero_bg_mobile.jpg');
         background-size: 100% 100%, 100% auto;   /* フェードは全面、写真は横幅いっぱい */
         background-position: center top, center top;
@@ -2404,7 +2405,7 @@
         <ul class="news-list reveal delay-1" id="newsList" data-visible="3">
           <li class="news-item">
             <span class="news-date">2026.06.01</span>
-            <span class="news-body">6月・7月の休業日を掲載しました。ご来店前に<a href="access.html" style="color:var(--color-gold);">アクセス</a>ページのカレンダーをご確認ください。</span>
+            <span class="news-body">6月・7月の休業日を掲載しました。ご来店前にカレンダーをご確認ください。</span>
           </li>
           <li class="news-item">
             <span class="news-date">2026.06.01</span>

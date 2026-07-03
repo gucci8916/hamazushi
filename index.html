@@ -2024,12 +2024,13 @@
 
       /* スマホ：専用写真（看板全体）を上部にきれいに収め、文字は左下 */
       .hero {
-        height: 82vh;
-        min-height: 540px;
-        max-height: 800px;
+        height: 92vh;
+        min-height: 640px;
+        max-height: 900px;
         align-items: stretch;
         background: var(--color-ink);
         border-top: 72px solid var(--color-ink);  /* ヘッダー裏を黒に（白→グレー問題を解消）＋写真をヘッダー下へ */
+        padding-bottom: 32px;            /* 最下部ボタンと次セクションの間隔を確保 */
       }
       .hero-bg {
         position: absolute;
@@ -2076,7 +2077,7 @@
         display: flex;
         flex-direction: column;
       }
-      .hero-content .hero-eyebrow { margin-top: 40vh; }
+      .hero-content .hero-eyebrow { margin-top: 34vh; }
       .hero-content .hero-subtitle { margin-bottom: auto; }
 
       /* 基本情報バー：縦積み */

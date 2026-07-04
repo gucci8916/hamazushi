@@ -111,11 +111,15 @@
     </a>
   </div>
 
+  <!-- ヒーロー背景（固定・最背面）：main の外に置き、main 全体より低いz-indexの
+       独立したスタッキングコンテキストにすることで、モバイル端末でも
+       確実に他セクションの下に隠れるようにする -->
+  <div class="hero-bg" id="heroBg" role="img" aria-label="浜寿し打越店の会席料理"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+
   <main id="main">
     <!-- ============ ヒーロー ============ -->
     <section class="hero" aria-label="ファーストビュー">
-      <div class="hero-bg" id="heroBg" role="img" aria-label="浜寿し打越店の会席料理"></div>
-      <div class="hero-overlay" aria-hidden="true"></div>
 
       <div class="hero-content">
         <p class="hero-eyebrow">HAMAZUSHI UCHIKOSHI</p>

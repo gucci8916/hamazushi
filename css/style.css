@@ -2126,7 +2126,53 @@ body[data-page="top"] .nav.is-scrolled {
 @media (max-width: 640px) {
   body { line-height: 1.85; }
 
-  .hero { min-height: 560px; }
+  /* スマホ：写真は上部に自然な比率で収め、下端をグラデーションで暗転させて
+     本文エリアへなめらかに繋げる（fixedの全画面貼り付けはやめ、写真自体に
+     フェードを焼き込んで .hero の高さ分だけ絶対配置する） */
+  .hero {
+    height: 100svh;
+    min-height: 640px;
+    max-height: 920px;
+    padding: 0 24px 40px;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100svh;
+    min-height: 640px;
+    max-height: 920px;
+    background-color: var(--ink);
+    background-image:
+      linear-gradient(to bottom,
+        rgba(24, 23, 15, 0) 38%,
+        rgba(24, 23, 15, 0.3) 54%,
+        rgba(24, 23, 15, 0.75) 71%,
+        rgba(24, 23, 15, 0.97) 87%,
+        rgba(24, 23, 15, 1) 100%),
+      url('../images/hero_bg_mobile.jpg');
+    background-size: 100% 100%, 100% auto;
+    background-position: center top, center top;
+    background-repeat: no-repeat, no-repeat;
+    animation: none;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100svh;
+    min-height: 640px;
+    max-height: 920px;
+    background: linear-gradient(to bottom,
+      rgba(24, 23, 15, 0.18) 0%,
+      rgba(24, 23, 15, 0.04) 30%,
+      rgba(24, 23, 15, 0.55) 66%,
+      rgba(24, 23, 15, 0.92) 100%);
+  }
   .hero-title { letter-spacing: 0.18em; }
   .hero-ctas { flex-direction: column; align-items: stretch; width: min(320px, 86vw); }
 

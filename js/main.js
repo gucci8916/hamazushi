@@ -8,6 +8,18 @@
 (() => {
   'use strict';
 
+  /* ----------------------------------------
+     ページを開いた瞬間は必ず一番上から始める
+     （ブラウザの自動スクロール位置復元により、
+     再読み込み時にヘッダーが墨色のまま表示されるのを防ぐ）
+  ---------------------------------------- */
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  if (!window.location.hash) {
+    window.scrollTo(0, 0);
+  }
+
   const prefersReducedMotion =
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 

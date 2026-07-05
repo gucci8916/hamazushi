@@ -1325,6 +1325,9 @@ body[data-page="top"] .nav.is-scrolled {
   display: flex;
   gap: 4px;
   overflow-x: auto;
+  overflow-y: hidden;
+  touch-action: pan-x;
+  overscroll-behavior-x: contain;
   scrollbar-width: none;
   padding: 0 var(--section-pad-x);
   max-width: calc(var(--max-width) + 2 * var(--section-pad-x));
@@ -1661,6 +1664,21 @@ body[data-page="top"] .nav.is-scrolled {
   background: var(--gold);
   transform: rotate(45deg);
 }
+
+.houyou-coupon-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0 4px;
+}
+.houyou-coupon-actions .btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.86rem;
+  padding: 12px 20px;
+}
+.houyou-coupon-print { cursor: pointer; }
 
 /* ------------------------------------------------------------
    19. アクセス
@@ -2244,4 +2262,17 @@ body[data-page="top"] .nav.is-scrolled {
   .nav, .nav-drawer, .mobile-cta-bar, .hero-scroll, .skip-link { display: none !important; }
   body::before { display: none; }
   .reveal { opacity: 1 !important; transform: none !important; }
+
+  /* 法要ページ：印刷時はクーポンだけを表示 */
+  body[data-page="hoyo"] .page-hero,
+  body[data-page="hoyo"] .footer,
+  body[data-page="hoyo"] .houyou > .section-lead,
+  body[data-page="hoyo"] .houyou-coupon-actions {
+    display: none !important;
+  }
+  body[data-page="hoyo"] .houyou-inner > *:not(#houyouCoupon) { display: none !important; }
+  body[data-page="hoyo"] .houyou-coupon-wrap {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
 }

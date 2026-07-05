@@ -247,4 +247,13 @@
       a.setAttribute('aria-current', 'page');
     });
   })();
+
+  /* ----------------------------------------
+     法要ページ：クーポンだけを印刷
+  ---------------------------------------- */
+  (() => {
+    const printBtn = document.getElementById('houyouCouponPrint');
+    if (!printBtn) return;
+    printBtn.addEventListener('click', () => window.print());
+  })();
 })();

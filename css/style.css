@@ -1431,7 +1431,13 @@ body[data-page="top"] .nav.is-scrolled {
   transition: transform 0.7s var(--ease-out);
 }
 .menu-photo-card:hover > img { transform: scale(1.045); }
-.nigiri-tall > img { aspect-ratio: 1 / 1; }
+
+/* にぎり：元の写真の縦横比を保ったまま、トリミングせず全体を表示 */
+#panel-nigiri .menu-photo-card > img {
+  aspect-ratio: auto;
+  height: auto;
+  object-fit: contain;
+}
 
 .menu-photo-info {
   display: flex;

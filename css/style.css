@@ -110,7 +110,7 @@ body {
   font-family: var(--font-sans);
   font-weight: 400;
   color: var(--text);
-  background: var(--paper);
+  background: var(--ink);
   line-height: 1.9;
   letter-spacing: 0.02em;
   -webkit-font-smoothing: antialiased;
@@ -208,7 +208,7 @@ h1, h2, h3, h4 {
   left: 0;
   width: 100%;
   z-index: 100;
-  background: rgba(24, 23, 15, 0.9);
+  background: var(--ink);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line-inv);
@@ -223,7 +223,7 @@ body[data-page="top"] .nav {
   backdrop-filter: none;
 }
 body[data-page="top"] .nav.is-scrolled {
-  background: rgba(24, 23, 15, 0.9);
+  background: var(--ink);
   border-bottom-color: var(--line-inv);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
@@ -2013,7 +2013,7 @@ body[data-page="top"] .nav.is-scrolled {
   bottom: 0;
   z-index: 90;
   padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px));
-  background: rgba(24, 23, 15, 0.94);
+  background: var(--ink);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   border-top: 1px solid var(--line-gold);

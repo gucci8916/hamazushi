@@ -1280,6 +1280,7 @@ body[data-page="top"] .nav.is-scrolled {
    17. メニュー（タブ / カード / リスト）
 ------------------------------------------------------------ */
 .menu {
+  background: var(--paper);
   padding: clamp(48px, 7vw, 72px) 0 var(--section-pad-y);
 }
 .menu-inner {
@@ -1579,6 +1580,7 @@ body[data-page="top"] .nav.is-scrolled {
    18. ご法要
 ------------------------------------------------------------ */
 .houyou {
+  background: var(--paper);
   padding: clamp(48px, 7vw, 72px) var(--section-pad-x) var(--section-pad-y);
 }
 .houyou .section-lead {
@@ -1665,6 +1667,7 @@ body[data-page="top"] .nav.is-scrolled {
    19. アクセス
 ------------------------------------------------------------ */
 .access {
+  background: var(--paper);
   padding: clamp(48px, 7vw, 72px) var(--section-pad-x) var(--section-pad-y);
 }
 .access-inner {
@@ -1834,6 +1837,7 @@ body[data-page="top"] .nav.is-scrolled {
    20. 求人
 ------------------------------------------------------------ */
 .recruit {
+  background: var(--paper);
   padding: clamp(48px, 7vw, 72px) var(--section-pad-x) var(--section-pad-y);
 }
 .recruit-inner {

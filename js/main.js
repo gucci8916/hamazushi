@@ -256,4 +256,60 @@
     if (!printBtn) return;
     printBtn.addEventListener('click', () => window.print());
   })();
+
+  /* ----------------------------------------
+     お品書き：料理写真をタップで拡大表示（専務ご指摘対応）
+     対象：.menu-panel 内のすべての img（ロゴ等は対象外）
+  ---------------------------------------- */
+  (() => {
+    const photos = document.querySelectorAll('.menu-panel img');
+    if (!photos.length) return;
+
+    // ライトボックスのDOMを1つだけ生成
+    const overlay = document.createElement('div');
+    overlay.className = 'photo-lightbox';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', '写真拡大表示');
+    overlay.innerHTML = `
+      <button type="button" class="photo-lightbox-close" aria-label="閉じる">&times;</button>
+      <img class="photo-lightbox-img" src="" alt="">
+      <p class="photo-lightbox-caption"></p>
+    `;
+    document.body.appendChild(overlay);
+
+    const imgEl = overlay.querySelector('.photo-lightbox-img');
+    const captionEl = overlay.querySelector('.photo-lightbox-caption');
+    const closeBtn = overlay.querySelector('.photo-lightbox-close');
+
+    function openLightbox(src, alt) {
+      imgEl.src = src;
+      imgEl.alt = alt || '';
+      captionEl.textContent = alt || '';
+      overlay.classList.add('is-open');
+      document.body.classList.add('lightbox-open');
+    }
+    function closeLightbox() {
+      overlay.classList.remove('is-open');
+      document.body.classList.remove('lightbox-open');
+      imgEl.src = '';
+    }
+
+    photos.forEach((img) => {
+      img.classList.add('is-zoomable');
+      img.setAttribute('tabindex', '0');
+      img.setAttribute('role', 'button');
+      img.setAttribute('aria-label', (img.alt || '写真') + 'を拡大表示');
+      img.addEventListener('click', () => openLightbox(img.src, img.alt));
+      img.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(img.src, img.alt); }
+      });
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeLightbox(); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeLightbox();
+    });
+  })();
 })();

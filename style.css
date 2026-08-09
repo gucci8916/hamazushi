@@ -47,7 +47,7 @@
   /* 色 ― 金茶（3段階：装飾 / 標準 / 文字用） */
   --gold-lt:    #d3b878;   /* 暗色背景上の金 */
   --gold:       #a8853f;   /* 線・アイコン */
-  --gold-deep:  #86672a;   /* 明色背景上の小さな金文字（コントラスト確保） */
+  --gold-deep:  #5f471c;   /* 明色背景上の小さな金文字（高齢者向けにさらに濃度アップ） */
 
   /* 色 ― 朱（ロゴの落款）：CTAと印にのみ使用 */
   --shu:        #a2342a;
@@ -55,7 +55,7 @@
 
   /* 色 ― テキスト */
   --text:       #37342a;
-  --muted:      #7c7462;
+  --muted:      #4a4536;   /* 高齢者向けにさらに濃度アップ（元#7c7462→#635b4a→#4a4536） */
   --text-inv:   rgba(250, 247, 240, 0.92);
   --muted-inv:  rgba(250, 247, 240, 0.55);
 
@@ -99,7 +99,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  font-size: 20px;  /* 高齢者にも読みやすいよう拡大（元16px）。remベースの全サイズが比例して大きくなる */
   overscroll-behavior: none;
   scroll-padding-top: calc(var(--nav-h) + 16px);
   background: var(--ink); /* オーバースクロール時の上下端を墨色で統一 */
@@ -110,7 +110,7 @@ body {
   font-family: var(--font-sans);
   font-weight: 400;
   color: var(--text);
-  background: var(--paper);
+  background: var(--ink);
   line-height: 1.9;
   letter-spacing: 0.02em;
   -webkit-font-smoothing: antialiased;
@@ -208,7 +208,7 @@ h1, h2, h3, h4 {
   left: 0;
   width: 100%;
   z-index: 100;
-  background: rgba(24, 23, 15, 0.9);
+  background: var(--ink);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line-inv);
@@ -223,7 +223,7 @@ body[data-page="top"] .nav {
   backdrop-filter: none;
 }
 body[data-page="top"] .nav.is-scrolled {
-  background: rgba(24, 23, 15, 0.9);
+  background: var(--ink);
   border-bottom-color: var(--line-inv);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
@@ -245,7 +245,7 @@ body[data-page="top"] .nav.is-scrolled {
   align-items: center;
   flex-shrink: 0;
   height: 100%;
-  padding: 14px 0;
+  padding: 7px 0;  /* ロゴを大きく見せるため余白を縮小（元14px） */
 }
 .nav-logo-img {
   height: 100%;
@@ -461,6 +461,22 @@ body[data-page="top"] .nav.is-scrolled {
   transform: translateY(-2px);
 }
 
+/* トップのヒーロー内「お品書きを見る」：塗りつぶしで目立たせる（専務ご指摘対応） */
+.hero-ctas .btn-outline {
+  color: var(--ink);
+  background: var(--gold-lt);
+  border-color: var(--gold-lt);
+  font-weight: 700;
+  box-shadow: 0 2px 4px rgba(24, 23, 15, 0.15), 0 10px 24px rgba(211, 184, 120, 0.3);
+}
+.hero-ctas .btn-outline:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--ink);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(24, 23, 15, 0.18), 0 16px 32px rgba(211, 184, 120, 0.4);
+}
+
 /* 明色背景上のアウトライン */
 .btn-outline--ink {
   color: var(--ink);
@@ -575,8 +591,7 @@ body[data-page="top"] .nav.is-scrolled {
       rgba(24, 23, 15, 0.28) 0%,
       rgba(24, 23, 15, 0.1) 30%,
       rgba(24, 23, 15, 0.42) 68%,
-      rgba(24, 23, 15, 0.86) 100%),
-    radial-gradient(ellipse at center, transparent 40%, rgba(24, 23, 15, 0.45) 100%);
+      rgba(24, 23, 15, 0.86) 100%);
 }
 
 .hero-content {
@@ -882,7 +897,7 @@ body[data-page="top"] .nav.is-scrolled {
   padding: 16px 20px;
   font-size: 0.8rem;
   line-height: 2;
-  color: var(--muted);
+  color: #3a3728;
   background: rgba(168, 133, 63, 0.06);
   border-left: 2px solid var(--line-gold);
   border-radius: 0 var(--radius) var(--radius) 0;
@@ -1280,6 +1295,7 @@ body[data-page="top"] .nav.is-scrolled {
    17. メニュー（タブ / カード / リスト）
 ------------------------------------------------------------ */
 .menu {
+  background: var(--paper);
   padding: clamp(48px, 7vw, 72px) 0 var(--section-pad-y);
 }
 .menu-inner {
@@ -1325,6 +1341,9 @@ body[data-page="top"] .nav.is-scrolled {
   display: flex;
   gap: 4px;
   overflow-x: auto;
+  overflow-y: hidden;
+  touch-action: pan-x;
+  overscroll-behavior-x: contain;
   scrollbar-width: none;
   padding: 0 var(--section-pad-x);
   max-width: calc(var(--max-width) + 2 * var(--section-pad-x));
@@ -1428,7 +1447,13 @@ body[data-page="top"] .nav.is-scrolled {
   transition: transform 0.7s var(--ease-out);
 }
 .menu-photo-card:hover > img { transform: scale(1.045); }
-.nigiri-tall > img { aspect-ratio: 3 / 4; }
+
+/* にぎり：元の写真の縦横比を保ったまま、トリミングせず全体を表示 */
+#panel-nigiri .menu-photo-card > img {
+  aspect-ratio: auto;
+  height: auto;
+  object-fit: contain;
+}
 
 .menu-photo-info {
   display: flex;
@@ -1579,6 +1604,7 @@ body[data-page="top"] .nav.is-scrolled {
    18. ご法要
 ------------------------------------------------------------ */
 .houyou {
+  background: var(--paper);
   padding: clamp(48px, 7vw, 72px) var(--section-pad-x) var(--section-pad-y);
 }
 .houyou .section-lead {
@@ -1661,10 +1687,26 @@ body[data-page="top"] .nav.is-scrolled {
   transform: rotate(45deg);
 }
 
+.houyou-coupon-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0 4px;
+}
+.houyou-coupon-actions .btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.86rem;
+  padding: 12px 20px;
+}
+.houyou-coupon-print { cursor: pointer; }
+
 /* ------------------------------------------------------------
    19. アクセス
 ------------------------------------------------------------ */
 .access {
+  background: var(--paper);
   padding: clamp(48px, 7vw, 72px) var(--section-pad-x) var(--section-pad-y);
 }
 .access-inner {
@@ -1834,6 +1876,7 @@ body[data-page="top"] .nav.is-scrolled {
    20. 求人
 ------------------------------------------------------------ */
 .recruit {
+  background: var(--paper);
   padding: clamp(48px, 7vw, 72px) var(--section-pad-x) var(--section-pad-y);
 }
 .recruit-inner {
@@ -2013,7 +2056,7 @@ body[data-page="top"] .nav.is-scrolled {
   bottom: 0;
   z-index: 90;
   padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px));
-  background: rgba(24, 23, 15, 0.94);
+  background: var(--ink);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   border-top: 1px solid var(--line-gold);
@@ -2091,6 +2134,7 @@ body[data-page="top"] .nav.is-scrolled {
 }
 
 @media (max-width: 860px) {
+  html { font-size: 17px; }  /* スマホ利用者は比較的若い層が多いため、PC(20px)より控えめに（元16px） */
   :root { --nav-h: 66px; }
 
   .nav-links { display: none; }
@@ -2147,38 +2191,18 @@ body[data-page="top"] .nav.is-scrolled {
     background-color: var(--ink);
     background-image:
       linear-gradient(to bottom,
-        rgba(24, 23, 15, 0) 24%,
-        rgba(24, 23, 15, 0.1) 38%,
-        rgba(24, 23, 15, 0.28) 50%,
-        rgba(24, 23, 15, 0.52) 62%,
-        rgba(24, 23, 15, 0.76) 74%,
-        rgba(24, 23, 15, 0.92) 86%,
+        rgba(24, 23, 15, 0) 16%,
+        rgba(24, 23, 15, 0.22) 24%,
+        rgba(24, 23, 15, 0.48) 30%,
+        rgba(24, 23, 15, 0.74) 35%,
+        rgba(24, 23, 15, 0.94) 39%,
+        rgba(24, 23, 15, 1) 43%,
         rgba(24, 23, 15, 1) 100%),
-      radial-gradient(ellipse at center, transparent 40%, rgba(24, 23, 15, 0.4) 100%),
       url('../images/hero_bg_mobile.jpg');
-    background-size: 100% 100%, 100% 100%, cover;
-    background-position: center top, center top, center 35%;
-    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: 100% 100%, 100% auto;
+    background-position: center top, center top;
+    background-repeat: no-repeat, no-repeat;
     animation: none;
-  }
-  /* 写真と単色部分の境目に、ぼかした写真のコピーを帯状に重ねて
-     切れ目を視覚的に溶かす */
-  .hero-bg::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url('../images/hero_bg_mobile.jpg');
-    background-size: cover;
-    background-position: center 35%;
-    filter: blur(20px) brightness(0.85);
-    -webkit-mask-image: linear-gradient(to bottom,
-      transparent 0%, transparent 42%,
-      black 58%, black 76%,
-      transparent 94%);
-    mask-image: linear-gradient(to bottom,
-      transparent 0%, transparent 42%,
-      black 58%, black 76%,
-      transparent 94%);
   }
   .hero-overlay {
     position: fixed;
@@ -2191,13 +2215,12 @@ body[data-page="top"] .nav.is-scrolled {
     max-height: 900px;
     background:
       linear-gradient(to bottom,
-        rgba(24, 23, 15, 0.18) 0%,
-        rgba(24, 23, 15, 0.04) 20%,
+        rgba(24, 23, 15, 0) 0%,
+        rgba(24, 23, 15, 0) 20%,
         rgba(24, 23, 15, 0.22) 46%,
         rgba(24, 23, 15, 0.5) 64%,
         rgba(24, 23, 15, 0.78) 80%,
-        rgba(24, 23, 15, 0.95) 100%),
-      radial-gradient(ellipse at center, transparent 45%, rgba(24, 23, 15, 0.35) 100%);
+        rgba(24, 23, 15, 0.95) 100%);
   }
   .hero-title { letter-spacing: 0.18em; }
   .hero-ctas { flex-direction: column; align-items: stretch; width: min(320px, 86vw); }
@@ -2258,8 +2281,93 @@ body[data-page="top"] .nav.is-scrolled {
   .hero-bg { animation: none; }
 }
 
+/* ============================================
+   お品書き：写真タップ拡大（ライトボックス）
+   専務ご指摘対応：料理写真を拡大して見られるように
+============================================ */
+.menu-panel img.is-zoomable {
+  cursor: zoom-in;
+  transition: filter 0.2s;
+}
+.menu-panel img.is-zoomable:hover,
+.menu-panel img.is-zoomable:focus-visible {
+  filter: brightness(0.94);
+  outline: none;
+}
+
+body.lightbox-open { overflow: hidden; }
+
+.photo-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 14px;
+  padding: clamp(16px, 5vw, 48px);
+  background: rgba(24, 23, 15, 0.92);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+.photo-lightbox.is-open {
+  display: flex;
+}
+.photo-lightbox-img {
+  max-width: min(94vw, 1100px);
+  max-height: 82vh;
+  width: auto;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  cursor: zoom-out;
+}
+.photo-lightbox-caption {
+  color: var(--text-inv);
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+  max-width: 90vw;
+}
+.photo-lightbox-close {
+  position: absolute;
+  top: clamp(12px, 3vw, 28px);
+  right: clamp(12px, 3vw, 28px);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--text-inv);
+  background: rgba(250, 247, 240, 0.1);
+  border: 1px solid rgba(250, 247, 240, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.photo-lightbox-close:hover {
+  background: rgba(250, 247, 240, 0.2);
+  transform: rotate(90deg);
+}
+
 @media print {
   .nav, .nav-drawer, .mobile-cta-bar, .hero-scroll, .skip-link { display: none !important; }
   body::before { display: none; }
   .reveal { opacity: 1 !important; transform: none !important; }
+
+  /* 法要ページ：印刷時はクーポンだけを表示 */
+  body[data-page="hoyo"] .page-hero,
+  body[data-page="hoyo"] .footer,
+  body[data-page="hoyo"] .houyou > .section-lead,
+  body[data-page="hoyo"] .houyou-coupon-actions {
+    display: none !important;
+  }
+  body[data-page="hoyo"] .houyou-inner > *:not(#houyouCoupon) { display: none !important; }
+  body[data-page="hoyo"] .houyou-coupon-wrap {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
 }

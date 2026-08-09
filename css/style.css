@@ -2134,6 +2134,7 @@ body[data-page="top"] .nav.is-scrolled {
 }
 
 @media (max-width: 860px) {
+  html { font-size: 17px; }  /* スマホ利用者は比較的若い層が多いため、PC(20px)より控えめに（元16px） */
   :root { --nav-h: 66px; }
 
   .nav-links { display: none; }

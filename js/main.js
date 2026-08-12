@@ -258,11 +258,12 @@
   })();
 
   /* ----------------------------------------
-     お品書き：料理写真をタップで拡大表示（専務ご指摘対応）
-     対象：.menu-panel 内のすべての img（ロゴ等は対象外）
+     お品書き・ご法要：料理写真をタップで拡大表示（専務ご指摘対応）
+     表示は軽量なWebPサムネイル、拡大時のみ data-full の高画質JPGを読み込む
+     対象：.menu-panel / .menu-photo-grid 内のすべての img（ロゴ・クーポン等は対象外）
   ---------------------------------------- */
   (() => {
-    const photos = document.querySelectorAll('.menu-panel img');
+    const photos = document.querySelectorAll('.menu-panel img, .menu-photo-grid img');
     if (!photos.length) return;
 
     // ライトボックスのDOMを1つだけ生成
@@ -282,12 +283,26 @@
     const captionEl = overlay.querySelector('.photo-lightbox-caption');
     const closeBtn = overlay.querySelector('.photo-lightbox-close');
 
-    function openLightbox(src, alt) {
-      imgEl.src = src;
+    function openLightbox(fullSrc, thumbSrc, alt) {
+      // まずサムネイルを即表示（体感を軽く）、高画質版を裏で読み込んで差し替え
+      imgEl.src = thumbSrc;
       imgEl.alt = alt || '';
       captionEl.textContent = alt || '';
       overlay.classList.add('is-open');
+      overlay.classList.add('is-loading');
       document.body.classList.add('lightbox-open');
+
+      if (fullSrc && fullSrc !== thumbSrc) {
+        const hiRes = new Image();
+        hiRes.onload = () => {
+          imgEl.src = fullSrc;
+          overlay.classList.remove('is-loading');
+        };
+        hiRes.onerror = () => { overlay.classList.remove('is-loading'); };
+        hiRes.src = fullSrc;
+      } else {
+        overlay.classList.remove('is-loading');
+      }
     }
     function closeLightbox() {
       overlay.classList.remove('is-open');
@@ -300,9 +315,10 @@
       img.setAttribute('tabindex', '0');
       img.setAttribute('role', 'button');
       img.setAttribute('aria-label', (img.alt || '写真') + 'を拡大表示');
-      img.addEventListener('click', () => openLightbox(img.src, img.alt));
+      const fullSrc = img.dataset.full || img.src;
+      img.addEventListener('click', () => openLightbox(fullSrc, img.src, img.alt));
       img.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(img.src, img.alt); }
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(fullSrc, img.src, img.alt); }
       });
     });
 

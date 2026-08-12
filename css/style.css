@@ -2353,6 +2353,18 @@ body.lightbox-open { overflow: hidden; }
   transform: rotate(90deg);
 }
 
+/* 高画質版を裏で読み込んでいる間、画像をうっすら脈動させて分かるように */
+.photo-lightbox.is-loading .photo-lightbox-img {
+  animation: photoLightboxPulse 1.1s ease-in-out infinite;
+}
+@keyframes photoLightboxPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.72; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .photo-lightbox.is-loading .photo-lightbox-img { animation: none; }
+}
+
 @media print {
   .nav, .nav-drawer, .mobile-cta-bar, .hero-scroll, .skip-link { display: none !important; }
   body::before { display: none; }

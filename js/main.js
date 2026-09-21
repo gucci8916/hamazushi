@@ -328,4 +328,25 @@
       if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeLightbox();
     });
   })();
+
+  /* ----------------------------------------
+     電話ボタンのタップ計測（GA4）
+     tel: リンクがクリックされた回数を「phone_call」イベントとして送信。
+     GA4未導入・読み込み前でもエラーにならないよう安全に呼び出す。
+  ---------------------------------------- */
+  (() => {
+    const telLinks = document.querySelectorAll('a[href^="tel:"]');
+    if (!telLinks.length) return;
+    telLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'phone_call', {
+            event_category: 'engagement',
+            event_label: link.href,
+            page_path: window.location.pathname,
+          });
+        }
+      });
+    });
+  })();
 })();

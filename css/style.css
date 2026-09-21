@@ -1872,6 +1872,41 @@ body[data-page="top"] .nav.is-scrolled {
   text-align: center;
 }
 
+/* 駐車場案内 */
+.parking-block {
+  display: grid;
+  grid-template-columns: minmax(0, 280px) 1fr;
+  gap: clamp(20px, 4vw, 36px);
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: clamp(18px, 3vw, 28px);
+  margin-bottom: clamp(28px, 5vw, 44px);
+}
+.parking-map {
+  border-radius: calc(var(--radius) - 4px);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.parking-map img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.parking-note p {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  margin: 0 0 10px;
+}
+.parking-note-sub {
+  color: var(--muted);
+  font-size: 0.82rem !important;
+  line-height: 1.8 !important;
+  margin: 0 !important;
+}
+
 /* ------------------------------------------------------------
    20. 求人
 ------------------------------------------------------------ */
@@ -2234,6 +2269,8 @@ body[data-page="top"] .nav.is-scrolled {
   .menu-photo-grid--wide { grid-template-columns: 1fr; }
   .scene-grid { grid-template-columns: 1fr; }
   .bus-grid { grid-template-columns: 1fr; }
+  .parking-block { grid-template-columns: 1fr; }
+  .parking-map { max-width: 260px; margin: 0 auto; }
 
   .gallery-carousel { gap: 0; }
   .gallery-nav {

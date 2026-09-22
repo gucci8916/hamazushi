@@ -2440,11 +2440,27 @@ body.lightbox-open { overflow: hidden; }
 }
 
 @media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm;
+  }
+
   .nav, .nav-drawer, .mobile-cta-bar, .hero-scroll, .skip-link { display: none !important; }
   body::before { display: none; }
   .reveal { opacity: 1 !important; transform: none !important; }
 
-  /* 法要ページ：印刷時はクーポン画像だけを表示 */
+  /* 法要ページ：印刷時はクーポン画像だけを、A4縦1枚にきっちり収める */
+  html {
+    background: #fff !important;
+  }
+  body[data-page="hoyo"] {
+    background: #fff !important;
+    padding-bottom: 0 !important;
+    margin: 0 !important;
+  }
+  body[data-page="hoyo"] main {
+    padding-top: 0 !important;
+  }
   body[data-page="hoyo"] .page-hero,
   body[data-page="hoyo"] .footer,
   body[data-page="hoyo"] .houyou > .section-lead,
@@ -2453,8 +2469,38 @@ body.lightbox-open { overflow: hidden; }
     display: none !important;
   }
   body[data-page="hoyo"] .houyou-inner > *:not(#houyouCoupon) { display: none !important; }
+
+  body[data-page="hoyo"] .houyou {
+    padding: 0 !important;
+    background: #fff !important;
+  }
+  body[data-page="hoyo"] .houyou-inner {
+    max-width: none !important;
+    margin: 0 !important;
+  }
   body[data-page="hoyo"] .houyou-coupon-wrap {
-    box-shadow: none;
-    border: 1px solid #ccc;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+  body[data-page="hoyo"] .houyou-coupon-img {
+    border: none !important;
+    border-radius: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  body[data-page="hoyo"] .houyou-coupon-img img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 186mm !important;
+    aspect-ratio: 700 / 1032 !important;
+    object-fit: fill !important;
+    display: block !important;
+    margin: 0 auto !important;
   }
 }

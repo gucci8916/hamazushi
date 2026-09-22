@@ -263,7 +263,7 @@
      対象：.menu-panel / .menu-photo-grid 内のすべての img（ロゴ・クーポン等は対象外）
   ---------------------------------------- */
   (() => {
-    const photos = document.querySelectorAll('.menu-panel img, .menu-photo-grid img');
+    const photos = document.querySelectorAll('.menu-panel img, .menu-photo-grid img, .parking-map img');
     if (!photos.length) return;
 
     // ライトボックスのDOMを1つだけ生成

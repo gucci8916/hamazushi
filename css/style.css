@@ -1878,6 +1878,7 @@ body[data-page="top"] .nav.is-scrolled {
   margin-bottom: clamp(28px, 5vw, 44px);
 }
 .parking-map {
+  position: relative;
   border-radius: calc(var(--radius) - 4px);
   overflow: hidden;
   border: 1px solid var(--line);
@@ -1886,6 +1887,22 @@ body[data-page="top"] .nav.is-scrolled {
   width: 100%;
   height: auto;
   display: block;
+}
+.parking-map-badge {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  background: rgba(24, 23, 15, 0.78);
+  color: var(--text-inv);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  border-radius: 999px;
+  pointer-events: none;
+  backdrop-filter: blur(2px);
 }
 .parking-note p {
   font-size: 0.95rem;
@@ -2339,12 +2356,15 @@ body[data-page="top"] .nav.is-scrolled {
    お品書き：写真タップ拡大（ライトボックス）
    専務ご指摘対応：料理写真を拡大して見られるように
 ============================================ */
-.menu-panel img.is-zoomable {
+.menu-panel img.is-zoomable,
+.parking-map img.is-zoomable {
   cursor: zoom-in;
   transition: filter 0.2s;
 }
 .menu-panel img.is-zoomable:hover,
-.menu-panel img.is-zoomable:focus-visible {
+.menu-panel img.is-zoomable:focus-visible,
+.parking-map img.is-zoomable:hover,
+.parking-map img.is-zoomable:focus-visible {
   filter: brightness(0.94);
   outline: none;
 }
@@ -2424,11 +2444,12 @@ body.lightbox-open { overflow: hidden; }
   body::before { display: none; }
   .reveal { opacity: 1 !important; transform: none !important; }
 
-  /* 法要ページ：印刷時はクーポンだけを表示 */
+  /* 法要ページ：印刷時はクーポン画像だけを表示 */
   body[data-page="hoyo"] .page-hero,
   body[data-page="hoyo"] .footer,
   body[data-page="hoyo"] .houyou > .section-lead,
-  body[data-page="hoyo"] .houyou-coupon-actions {
+  body[data-page="hoyo"] .houyou-coupon-actions,
+  body[data-page="hoyo"] .houyou-coupon-text {
     display: none !important;
   }
   body[data-page="hoyo"] .houyou-inner > *:not(#houyouCoupon) { display: none !important; }

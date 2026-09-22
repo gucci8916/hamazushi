@@ -611,7 +611,7 @@ body[data-page="top"] .nav.is-scrolled {
 }
 
 .hero-logo {
-  width: clamp(200px, 30vw, 400px);
+  width: clamp(210px, 31vw, 420px);
   height: auto;
   margin-top: clamp(20px, 4vh, 48px);
   filter: drop-shadow(0 3px 32px rgba(24, 23, 15, 0.7));
@@ -2280,6 +2280,19 @@ body[data-page="top"] .nav.is-scrolled {
     height: 78vh;
     min-height: 560px;
     max-height: 780px;
+    background-image:
+      linear-gradient(to bottom,
+        rgba(24, 23, 15, 0) 20%,
+        rgba(24, 23, 15, 0.22) 29%,
+        rgba(24, 23, 15, 0.48) 36%,
+        rgba(24, 23, 15, 0.74) 42%,
+        rgba(24, 23, 15, 0.94) 46%,
+        rgba(24, 23, 15, 1) 50%,
+        rgba(24, 23, 15, 1) 100%),
+      url('../images/hero_bg_mobile.jpg');
+    background-size: 100% 100%, 100% auto;
+    background-position: center top, center top;
+    background-repeat: no-repeat, no-repeat;
   }
   .hero-overlay {
     height: 78vh;

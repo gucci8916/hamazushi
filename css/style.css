@@ -2215,6 +2215,10 @@ body[data-page="top"] .nav.is-scrolled {
 @media (max-width: 640px) {
   body { line-height: 1.85; }
 
+  /* 基本情報バー：スマホは電話ボタンが他に複数箇所あり重複するため非表示
+     （OPEN・定休日の2項目のみ表示） */
+  #infoTelWrap { display: none !important; }
+
   /* スマホ：写真は上部に自然な比率で収め、fixedで固定しつつ
      下端をグラデーションで暗転させて本文エリアへなめらかに繋げる */
   .hero {

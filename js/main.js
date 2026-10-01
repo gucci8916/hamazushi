@@ -23,6 +23,12 @@
   const prefersReducedMotion =
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // 英語ページ（<html lang="en">）では、画面読み上げ用の文言も英語にする
+  const isEn = (document.documentElement.lang || '').toLowerCase().startsWith('en');
+  const T = isEn
+    ? { open: 'Open menu', close: 'Close menu', viewer: 'Photo viewer', closeBtn: 'Close', zoom: ' — tap to enlarge', photo: 'Photo', copied: 'Copied!' }
+    : { open: 'メニューを開く', close: 'メニューを閉じる', viewer: '写真拡大表示', closeBtn: '閉じる', zoom: 'を拡大表示', photo: '写真', copied: 'コピーしました' };
+
   /* ----------------------------------------
      ヘッダー：スクロールで墨色に（トップのみ効果あり）
   ---------------------------------------- */
@@ -46,7 +52,7 @@
       hamburger.classList.remove('is-open');
       drawer.classList.remove('is-open');
       hamburger.setAttribute('aria-expanded', 'false');
-      hamburger.setAttribute('aria-label', 'メニューを開く');
+      hamburger.setAttribute('aria-label', T.open);
       document.body.style.overflow = '';
     };
 
@@ -54,11 +60,11 @@
       const isOpen = hamburger.classList.toggle('is-open');
       drawer.classList.toggle('is-open', isOpen);
       hamburger.setAttribute('aria-expanded', String(isOpen));
-      hamburger.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+      hamburger.setAttribute('aria-label', isOpen ? T.close : T.open);
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    drawer.querySelectorAll('.nav-drawer-link, .drawer-tel').forEach((link) => {
+    drawer.querySelectorAll('.nav-drawer-link, .drawer-tel, .drawer-call').forEach((link) => {
       link.addEventListener('click', closeDrawer);
     });
 
@@ -263,7 +269,7 @@
      対象：.menu-panel / .menu-photo-grid 内のすべての img（ロゴ・クーポン等は対象外）
   ---------------------------------------- */
   (() => {
-    const photos = document.querySelectorAll('.menu-panel img, .menu-photo-grid img, .parking-map img');
+    const photos = document.querySelectorAll('.menu-panel img, .menu-photo-grid img, .parking-map img, .en-zoom img');
     if (!photos.length) return;
 
     // ライトボックスのDOMを1つだけ生成
@@ -271,9 +277,9 @@
     overlay.className = 'photo-lightbox';
     overlay.setAttribute('role', 'dialog');
     overlay.setAttribute('aria-modal', 'true');
-    overlay.setAttribute('aria-label', '写真拡大表示');
+    overlay.setAttribute('aria-label', T.viewer);
     overlay.innerHTML = `
-      <button type="button" class="photo-lightbox-close" aria-label="閉じる">&times;</button>
+      <button type="button" class="photo-lightbox-close" aria-label="${T.closeBtn}">&times;</button>
       <img class="photo-lightbox-img" src="" alt="">
       <p class="photo-lightbox-caption"></p>
     `;
@@ -314,7 +320,7 @@
       img.classList.add('is-zoomable');
       img.setAttribute('tabindex', '0');
       img.setAttribute('role', 'button');
-      img.setAttribute('aria-label', (img.alt || '写真') + 'を拡大表示');
+      img.setAttribute('aria-label', (img.alt || T.photo) + T.zoom);
       const fullSrc = img.dataset.full || img.src;
       img.addEventListener('click', () => openLightbox(fullSrc, img.src, img.alt));
       img.addEventListener('keydown', (e) => {
@@ -345,6 +351,64 @@
             event_label: link.href,
             page_path: window.location.pathname,
           });
+        }
+      });
+    });
+  })();
+
+  /* ----------------------------------------
+     言語切り替え・経路案内のクリック計測（GA4）
+     lang_switch      … 「English」「日本語」リンク（from / to を送信）
+     directions_click … 英語ページの「Get Directions」
+  ---------------------------------------- */
+  (() => {
+    const send = (name, params) => {
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', name, Object.assign({ transport_type: 'beacon', page_path: window.location.pathname }, params));
+      }
+    };
+    document.querySelectorAll('body a[hreflang]').forEach((link) => {
+      link.addEventListener('click', () => {
+        send('lang_switch', { from: isEn ? 'en' : 'ja', to: link.getAttribute('hreflang') });
+      });
+    });
+    document.querySelectorAll('a[data-directions]').forEach((link) => {
+      link.addEventListener('click', () => send('directions_click', { event_category: 'engagement' }));
+    });
+  })();
+
+  /* ----------------------------------------
+     タップでコピー（英語ページの住所など）
+     <button data-copy="コピーする文字">…</button>
+  ---------------------------------------- */
+  (() => {
+    const buttons = document.querySelectorAll('[data-copy]');
+    if (!buttons.length) return;
+    const fallbackCopy = (text) => {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch (e) { /* 何もしない */ }
+      document.body.removeChild(ta);
+    };
+    buttons.forEach((btn) => {
+      const label = btn.textContent;
+      btn.addEventListener('click', () => {
+        const text = btn.dataset.copy;
+        const done = () => {
+          btn.textContent = T.copied;
+          btn.classList.add('is-copied');
+          setTimeout(() => { btn.textContent = label; btn.classList.remove('is-copied'); }, 2000);
+        };
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(done, () => { fallbackCopy(text); done(); });
+        } else {
+          fallbackCopy(text);
+          done();
         }
       });
     });

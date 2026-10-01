@@ -311,6 +311,46 @@ body[data-page="top"] .nav.is-scrolled {
   color: #fff;
 }
 
+/* 言語切り替え（English / 日本語）：小さな枠付きで、ほかのメニューと区別 */
+.nav-links a.nav-lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  border: 1px solid var(--line-inv);
+  border-radius: 999px;
+  transition: border-color 0.25s, color 0.25s;
+}
+.nav-links a.nav-lang::after { display: none; }
+/* 項目が増えたため、PCナビは折り返さないようにし、狭い画面では詰める */
+.nav-links a { white-space: nowrap; }
+@media (min-width: 861px) and (max-width: 1240px) {
+  .nav-links { gap: 14px; }
+  .nav-links a:not(.nav-tel) { font-size: 0.78rem; letter-spacing: 0.04em; }
+  .nav-links a.nav-lang { padding: 6px 10px; }
+  .nav-tel { padding: 9px 12px; font-size: 0.74rem; letter-spacing: 0.02em; }
+  .nav-logo { padding: 10px 0; }
+}
+@media (min-width: 861px) and (max-width: 1080px) {
+  .nav-inner { gap: 12px; }
+  .nav-links { gap: 10px; }
+  .nav-links a:not(.nav-tel) { font-size: 0.74rem; letter-spacing: 0.02em; }
+  .nav-lang svg,
+  .nav-tel svg { display: none; }
+  .nav-tel { padding: 8px 10px; }
+}
+.nav-links a.nav-lang:hover { color: var(--gold-lt); border-color: var(--gold-lt); }
+.nav-lang svg { flex-shrink: 0; }
+.nav-drawer-lang {
+  font-family: var(--font-sans) !important;
+  font-size: 1rem !important;
+  letter-spacing: 0.12em !important;
+  color: var(--gold-lt) !important;
+}
+.nav-drawer.is-open li:nth-child(6) .nav-drawer-link { transition-delay: 0.38s; }
+
 /* ハンバーガー */
 .nav-hamburger {
   display: none;

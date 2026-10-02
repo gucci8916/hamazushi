@@ -20,6 +20,11 @@
     window.scrollTo(0, 0);
   }
 
+  // URLの最後に ?check を付けたときだけ、未確定（TBD）の部分を黄色で表示する
+  if (/[?&]check\b/.test(window.location.search)) {
+    document.documentElement.classList.add('show-tbd');
+  }
+
   const prefersReducedMotion =
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 

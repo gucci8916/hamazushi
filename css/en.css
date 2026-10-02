@@ -41,7 +41,10 @@ html[lang="en"] {
 /* ------------------------------------------------------------
    02. 未確定（TBD）表示：確定するまで黄色で目立たせる
 ------------------------------------------------------------ */
-.tbd {
+/* 普段は目立たせない（完成形の見た目で確認できる）。
+   URLの最後に ?check を付けて開いたときだけ、未確定の部分を黄色で表示する
+   例）https://gucci8916.github.io/hamazushi/en/?check */
+.show-tbd .tbd {
   background: #fff1a8;
   color: #3b3000;
   outline: 1px dashed #b39500;
@@ -118,34 +121,31 @@ html[lang="en"] {
 /* ------------------------------------------------------------
    05. ファーストビュー
 ------------------------------------------------------------ */
-.en-hero {
-  position: relative;
-  min-height: min(100svh, 940px);
-  display: flex;
-  align-items: flex-end;
-  padding: calc(var(--nav-h) + 48px) clamp(20px, 6vw, 80px) clamp(48px, 8vh, 88px);
-  overflow: hidden;
+/* 動きは日本語版トップと同じ：背景写真は固定（.hero-bg / .hero-overlay を共用）、
+   一番上ではヘッダーが透明、スクロールすると墨色になる */
+body[data-page="en-top"] .nav {
+  background: transparent;
+  border-bottom-color: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+body[data-page="en-top"] .nav.is-scrolled {
   background: var(--ink);
+  border-bottom-color: var(--line-inv);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
 }
-.en-hero-bg {
-  position: absolute;
-  inset: 0;
-  background: url('../images/hero_bg.jpg') center 40% / cover no-repeat;
-}
-.en-hero-bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to right, rgba(24, 23, 15, 0.82) 0%, rgba(24, 23, 15, 0.55) 45%, rgba(24, 23, 15, 0.1) 80%),
-    linear-gradient(to bottom, rgba(24, 23, 15, 0.35) 0%, rgba(24, 23, 15, 0) 30%, rgba(24, 23, 15, 0.7) 100%);
+/* 英語は文字量が日本語版より多いので、高さは中身に合わせて伸びるようにする */
+.lang-en .hero.en-hero {
+  height: auto;
+  min-height: 100svh;
+  max-height: none;
+  padding-top: calc(var(--nav-h) + 40px);
 }
 .en-hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 640px;
+  max-width: 660px;
+  gap: 0;
   color: var(--text-inv);
-  animation: heroRise 1.2s var(--ease-out) 0.1s both;
 }
 .en-hero-since {
   font-size: 0.74rem;
@@ -157,6 +157,7 @@ html[lang="en"] {
 }
 .en-hero-title {
   font-family: var(--font-serif);
+  text-shadow: 0 2px 24px rgba(24, 23, 15, 0.6);
   font-size: clamp(2.6rem, 6.4vw, 4.4rem);
   font-weight: 600;
   line-height: 1.02;
@@ -431,6 +432,16 @@ html[lang="en"] {
   font-weight: 700;
   margin-bottom: 10px;
 }
+.en-pay-logos {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  margin: 2px 0 14px;
+  padding: 12px 16px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
 .en-know ul { list-style: none; display: grid; gap: 10px; }
 .en-know li {
   position: relative;
@@ -648,29 +659,14 @@ html[lang="en"] {
 }
 
 @media (max-width: 640px) {
-  .en-hero {
-    min-height: auto;
+  /* スマホ：写真の範囲・グラデーションは日本語版と同じ（style.css の設定をそのまま使う）。
+     文字量が多い分、写真の下半分（墨色に溶けた部分）から文字が始まるようにする */
+  .lang-en .hero.en-hero {
+    min-height: 78vh;
+    padding: calc(var(--nav-h) + 50vw) 20px 40px;
     align-items: flex-start;
-    padding: calc(var(--nav-h) + 58vw) 20px 36px;
   }
-  /* スマホ：写真を上部に収め、下端を墨色へなめらかに溶かして文字を重ねる */
-  .en-hero-bg {
-    inset: auto;
-    top: var(--nav-h);
-    left: 0;
-    right: 0;
-    height: 75vw;
-    background-image: url('../images/hero_bg_mobile.jpg');
-    background-size: cover;
-    background-position: center top;
-  }
-  .en-hero-bg::after {
-    background: linear-gradient(to bottom,
-      rgba(24, 23, 15, 0) 0%,
-      rgba(24, 23, 15, 0) 50%,
-      rgba(24, 23, 15, 0.72) 78%,
-      rgba(24, 23, 15, 1) 100%);
-  }
+  .lang-en .hero-scroll { display: none; }
   .en-hero-ctas { flex-direction: column; align-items: stretch; }
   .en-hero-ctas .en-btn { width: 100%; }
 

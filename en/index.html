@@ -27,7 +27,6 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Structured data (Restaurant) -->
-  <!-- TBD: "name" = English restaurant name (not decided yet) -->
   <!-- TBD: add "openingHoursSpecification" after the hours are confirmed -->
   <script type="application/ld+json">
   {
@@ -77,8 +76,8 @@
 
   <header class="nav" role="banner">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="Hama Sushi Uchikoshi — Home">
-        <img src="../images/logo.png" alt="Hama Sushi Uchikoshi" class="nav-logo-img">
+      <a href="index.html" class="nav-logo" aria-label="Uchikoshi Hama Sushi — Home">
+        <img src="../images/logo.png" alt="Uchikoshi Hama Sushi" class="nav-logo-img">
       </a>
 
       <!-- PC navigation -->
@@ -123,20 +122,20 @@
     <a href="tel:+81426356983" class="drawer-call" aria-label="Call +81-42-635-6983">Call +81-42-635-6983</a>
   </div>
 
+  <!-- Hero background: fixed behind the page, same as the Japanese top page -->
+  <!-- TBD: replace the photo when we have one of a chef making nigiri -->
+  <div class="hero-bg" id="heroBg" role="img" aria-label="Sushi platter at the counter of Uchikoshi Hama Sushi"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+
   <main id="main">
     <!-- ============ (1) First view ============ -->
-    <section class="en-hero" aria-labelledby="en-hero-title">
-      <div class="en-hero-bg" role="img" aria-label="Sushi chefs' counter at Hama Sushi Uchikoshi"></div>
-      <!-- TBD: replace the photo when we have one of a chef making nigiri -->
-      <div class="en-hero-content">
+    <section class="hero en-hero" aria-labelledby="en-hero-title">
+      <div class="hero-content en-hero-content">
         <p class="en-hero-since">Since 1972 · Hachioji, Tokyo</p>
-        <!-- TBD: English restaurant name -->
-        <h1 class="en-hero-title" id="en-hero-title"><span class="tbd">Uchikoshi Hama Sushi</span></h1>
+        <h1 class="en-hero-title" id="en-hero-title">Uchikoshi Hama Sushi</h1>
         <p class="en-hero-ja" lang="ja">浜寿し 打越店</p>
         <p class="en-hero-catch">Traditional Sushi &amp; Kaiseki in Hachioji, Tokyo — since 1972</p>
         <p class="en-hero-lead">Watch our chefs make your nigiri at the counter, or relax in a private tatami room.</p>
-        <!-- TBD: show only after the executive director approves -->
-        <p class="en-hero-note"><span class="tbd">Not affiliated with the Hama-sushi conveyor-belt chain.</span></p>
 
         <div class="en-hero-ctas">
           <a href="https://www.google.com/maps/dir/?api=1&amp;destination=%E6%B5%9C%E5%AF%BF%E3%81%97%E6%89%93%E8%B6%8A%E5%BA%97%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%85%AB%E7%8E%8B%E5%AD%90%E5%B8%82%E7%B5%B9%E3%82%B1%E4%B8%981-52-16" class="en-btn en-btn--primary" data-directions target="_blank" rel="noopener">
@@ -149,6 +148,11 @@
             Call +81-42-635-6983
           </a>
         </div>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <span>SCROLL</span>
+        <div class="hero-scroll-line"></div>
       </div>
     </section>
 
@@ -291,7 +295,7 @@
         <div class="en-map reveal">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.6327235578515!2d139.3620555!3d35.6367798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60191d813ae3c991%3A0x74db18227a8f34f2!2z44CSMTkyLTA5MTIg5p2x5Lqs6YO95YWr546L5a2Q5biC57W544Kx5LiY77yR5LiB55uu77yV77yS4oiS77yR77yW!5e0!3m2!1sen!2sjp!4v1782648003059!5m2!1sen!2sjp"
-            title="Map to Hama Sushi Uchikoshi"
+            title="Map to Uchikoshi Hama Sushi"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             allowfullscreen
@@ -340,8 +344,8 @@
         </dl>
 
         <figure class="en-calendar en-zoom reveal">
-          <img src="../images/schedule_calendar.jpg" alt="Closure calendar — red days are closed" loading="lazy" width="842" height="596">
-          <figcaption><span class="en-red-dot" aria-hidden="true"></span>Red = closed. Tap to enlarge.</figcaption>
+          <img src="../images/schedule_calendar_en.jpg" alt="Holiday schedule — days in red boxes are closed" loading="lazy" width="1200" height="812">
+          <figcaption><span class="en-red-dot" aria-hidden="true"></span>Red boxes = closed. Tap to enlarge.</figcaption>
         </figure>
       </div>
     </section>
@@ -358,10 +362,13 @@
         <div class="en-know-grid">
           <div class="en-know reveal">
             <h3 class="en-know-title">Payment</h3>
+            <img class="en-pay-logos" src="../images/payment_cards.png" alt="Accepted cards: JCB, Visa, Mastercard" width="958" height="212" loading="lazy">
             <ul>
-              <li><strong>Credit cards:</strong> Visa, Mastercard, JCB, American Express, Diners Club</li>
-              <li><strong>Mobile payment:</strong> PayPay <span class="tbd">+ Alipay / WeChat Pay?</span></li>
-              <!-- TBD: add Alipay, WeChat Pay, etc.? -->
+              <li><strong>Credit cards:</strong> Visa, Mastercard, JCB<span class="tbd">, American Express, Diners Club</span></li>
+              <!-- TBD: American Express / Diners Club — keep only if accepted (they are not in the logo image) -->
+              <li><strong>Cash:</strong> Japanese yen</li>
+              <li><span class="tbd"><strong>Mobile payment:</strong> Alipay+ (Alipay, Kakao Pay, etc.)</span></li>
+              <!-- TBD: keep only if the restaurant has applied for Alipay+ via PayPay -->
               <li>All prices include tax. No tipping in Japan.</li>
               <li><span class="tbd">Table charge / service charge: (amount and explanation, if any)</span></li>
               <!-- TBD: otoshi (appetizer charge), table charge, service charge -->
@@ -408,9 +415,8 @@
   </main>
 
   <footer class="footer" role="contentinfo">
-    <p class="footer-logo"><a href="index.html" aria-label="Hama Sushi Uchikoshi — Home"><img src="../images/logo.png" alt="Hama Sushi Uchikoshi" class="footer-logo-img"></a></p>
-    <!-- TBD: English restaurant name -->
-    <p class="en-footer-name"><span class="tbd">Uchikoshi Hama Sushi</span> <span lang="ja">浜寿し打越店</span></p>
+    <p class="footer-logo"><a href="index.html" aria-label="Uchikoshi Hama Sushi — Home"><img src="../images/logo.png" alt="Uchikoshi Hama Sushi" class="footer-logo-img"></a></p>
+    <p class="en-footer-name">Uchikoshi Hama Sushi <span lang="ja">浜寿し打越店</span></p>
     <address class="footer-address">
       1-52-16 Kinugaoka, Hachioji, Tokyo <span class="tbd">192-0912 / 192-0011</span><br>
       Tel: <a href="tel:+81426356983">+81-42-635-6983</a> (Japanese)<br>
@@ -436,7 +442,7 @@
       <a href="../index.html" lang="ja" hreflang="ja">日本語</a>
     </nav>
 
-    <p class="footer-copy">© Hama Sushi Uchikoshi. All rights reserved.</p>
+    <p class="footer-copy">© Uchikoshi Hama Sushi. All rights reserved.</p>
   </footer>
 
   <!-- Mobile sticky bar: directions first, phone second -->

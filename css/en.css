@@ -483,6 +483,166 @@ body[data-page="en-top"] .nav.is-scrolled {
 }
 
 /* ------------------------------------------------------------
+   11b. トップの新レイアウト（Our Story / Hours / What to Eat / Seating）
+------------------------------------------------------------ */
+/* Our Story：日本語版「お店の想い」と同じ左写真・右文章 */
+.lang-en .about-kojo { letter-spacing: 0.01em; line-height: 1.2; font-size: clamp(1.7rem, 3.2vw, 2.3rem); }
+.lang-en .about-kojo-en { letter-spacing: 0.3em; text-transform: none; font-size: 0.8rem; }
+.lang-en .about-body { line-height: 1.85; font-size: 0.98rem; }
+.lang-en .about-tag { letter-spacing: 0.03em; }
+
+/* Hours（墨色の帯の上） */
+.section--ink .en-calendar figcaption { color: var(--muted-inv); }
+.section--ink .en-calendar img { border-color: var(--line-inv); }
+.en-fact dd .link-gold { white-space: nowrap; }
+
+/* What to Eat：にぎりを大きく推す */
+.en-signature {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--gold);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+.en-signature-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 3vw, 32px);
+  background: var(--white);
+}
+.en-signature-img img { width: 100%; height: auto; }
+.en-signature-body {
+  padding: clamp(24px, 4vw, 44px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--paper);
+}
+.en-signature-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--shu);
+}
+.en-signature-title {
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--ink);
+}
+.en-signature-ja { margin-top: -6px; font-size: 0.9rem; color: var(--gold-deep); }
+.en-signature-text { font-size: 0.95rem; line-height: 1.75; color: var(--text); }
+.en-signature-list { list-style: none; width: 100%; border-top: 1px solid var(--line); }
+.en-signature-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 9px 2px;
+  border-bottom: 1px dotted rgba(24, 23, 15, 0.22);
+  font-size: 0.95rem;
+}
+.en-signature-list li span:first-child { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700; color: var(--ink); }
+.en-signature-list small { margin-left: 6px; font-size: 0.72rem; font-weight: 500; color: var(--muted); }
+.en-signature-list li span:last-child { font-weight: 700; color: var(--gold-deep); white-space: nowrap; }
+.en-signature-note { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
+.en-signature-body .en-btn { margin-top: 6px; }
+
+.en-sub-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: clamp(48px, 7vw, 72px) 0 20px;
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  font-weight: 700;
+  color: var(--ink);
+}
+.en-sub-title::after { content: ""; flex: 1; height: 1px; background: var(--line-gold); }
+/* 「こんなのもあります」の写真：白背景の写真が多いので、全体が見えるよう収める */
+#what-to-eat .en-dish > img { object-fit: contain; background: var(--white); padding: 8px; }
+.en-dish-name { font-size: 1.2rem; }
+
+/* 迷ったらコース（墨色のブロック） */
+.en-course {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: clamp(48px, 7vw, 72px);
+  background: var(--ink);
+  background-image: var(--washi);
+  border: 1px solid var(--line-gold);
+  border-radius: var(--radius);
+  overflow: hidden;
+  color: var(--text-inv);
+}
+.en-course-img img { width: 100%; height: 100%; object-fit: cover; min-height: 280px; }
+.en-course-body {
+  padding: clamp(24px, 4vw, 44px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.en-course .en-signature-eyebrow { color: var(--gold-lt); }
+.en-course-title { font-size: clamp(1.7rem, 3.4vw, 2.3rem); font-weight: 700; line-height: 1.1; color: #fff; }
+.en-course-text { font-size: 0.92rem; line-height: 1.7; color: var(--text-inv); }
+.en-signature-list--light { border-top-color: var(--line-inv); }
+.en-signature-list--light li { border-bottom-color: rgba(250, 247, 240, 0.18); }
+.en-signature-list--light li span:first-child { color: #fff; }
+.en-signature-list--light li span:last-child { color: var(--gold-lt); }
+.en-course-note { font-size: 0.8rem; color: var(--muted-inv); }
+.en-course-note a { color: #fff; border-bottom: 1px solid var(--gold-lt); white-space: nowrap; }
+
+/* Seating：お部屋の写真を大きく */
+.en-seating {
+  padding: clamp(22px, 3.5vw, 36px);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--gold);
+  border-radius: var(--radius);
+  margin-bottom: clamp(16px, 2.5vw, 28px);
+}
+.en-seating-head { max-width: 760px; margin-bottom: 20px; }
+.en-seating-head p { font-size: 0.95rem; line-height: 1.7; }
+.en-seating-photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.en-seating-photos figure {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.en-seating-photos img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.en-seating-photos figcaption { padding: 10px 14px 12px; font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+.en-seating-photos figcaption strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+.en-know-grid--two { grid-template-columns: repeat(2, 1fr); }
+
+@media (max-width: 860px) {
+  .en-signature,
+  .en-course { grid-template-columns: 1fr; }
+  .en-course-img img { min-height: 0; aspect-ratio: 16 / 10; }
+  .en-seating-photos { grid-template-columns: 1fr 1fr; }
+  .en-seating-photos figure:first-child { grid-column: 1 / -1; }
+  .en-know-grid--two { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .en-seating-photos { grid-template-columns: 1fr; }
+}
+
+/* ------------------------------------------------------------
    12. メニューページ
 ------------------------------------------------------------ */
 /* カテゴリのショートカット（ヘッダーの下に吸着） */
@@ -679,4 +839,12 @@ body[data-page="en-top"] .nav.is-scrolled {
   .en-fact { grid-template-columns: 1fr; gap: 2px; padding: 16px 18px; }
   .en-menu-grid--two { grid-template-columns: 1fr; }
   .en-cat-nav a { padding: 8px 14px; }
+}
+
+/* Hours：墨色セクション内の白いカードは文字を濃い色に戻す */
+.section--ink .en-facts { color: var(--text); }
+.section--ink .en-facts dd { color: var(--text); }
+@media (max-width: 640px) {
+  .en-signature-list li { flex-wrap: wrap; }
+  .en-signature-list li span:first-child { white-space: nowrap; }
 }

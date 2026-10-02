@@ -848,3 +848,25 @@ body[data-page="en-top"] .nav.is-scrolled {
   .en-signature-list li { flex-wrap: wrap; }
   .en-signature-list li span:first-child { white-space: nowrap; }
 }
+
+/* ------------------------------------------------------------
+   ヒーロー直下の黒い帯（日本語版の情報バーと同じ見た目で3項目）
+------------------------------------------------------------ */
+.en-info-bar .info-bar-inner { grid-template-columns: repeat(3, 1fr); }
+.en-info-bar .info-item { border-right: 1px solid var(--line-inv); }
+.en-info-bar .info-item:last-child { border-right: none; }
+.en-info-bar .info-label { letter-spacing: 0.24em; text-indent: 0.24em; }
+.en-info-bar .info-value { font-size: 1.15rem; line-height: 1.45; letter-spacing: 0.02em; }
+.en-info-bar .info-value small { font-family: var(--font-sans); font-size: 0.74rem; color: var(--muted-inv); letter-spacing: 0.02em; }
+.en-info-tel { margin-top: 6px; font-size: 0.74rem; color: var(--muted-inv); }
+.en-info-tel a { color: var(--text-inv); border-bottom: 1px solid var(--line-gold); white-space: nowrap; }
+@media (max-width: 860px) {
+  .en-info-bar .info-bar-inner { grid-template-columns: 1fr; }
+  .en-info-bar .info-item { border-right: none; border-bottom: 1px solid var(--line-inv); }
+  .en-info-bar .info-item:last-child { border-bottom: none; }
+}
+
+/* Good to Know（墨色の背景）：中のカードは明るい面＋濃い文字のまま */
+.section--ink .en-seating,
+.section--ink .en-know { color: var(--text); border-color: var(--line-gold); }
+.section--ink .en-seating { background: var(--paper); }

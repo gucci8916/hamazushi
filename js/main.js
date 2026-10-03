@@ -375,6 +375,52 @@
   });
 
   /* ----------------------------------------
+     英語トップ「Also on the menu」：タップしたカードが広がり、もう片方はよける
+  ---------------------------------------- */
+  document.querySelectorAll('[data-also-grid]').forEach((grid) => {
+    const cards = Array.from(grid.querySelectorAll('.en-also-card'));
+    const setOpen = (card) => {
+      const apply = () => {
+        cards.forEach((c) => {
+          const on = c === card;
+          c.classList.toggle('is-open', on);
+          c.querySelector('.en-also-toggle')?.setAttribute('aria-expanded', String(on));
+          const d = c.querySelector('.en-also-details');
+          if (d) d.hidden = !on;
+        });
+        grid.classList.toggle('has-open', !!card);
+      };
+      const after = () => {
+        const target = card || grid;
+        const r = target.getBoundingClientRect();
+        const navH = document.querySelector('.nav')?.offsetHeight || 0;
+        if (r.top < navH + 8 || r.top > window.innerHeight * 0.6) {
+          target.scrollIntoView({ block: 'start', behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+        }
+      };
+      if (document.startViewTransition && !prefersReducedMotion) {
+        const t = document.startViewTransition(apply);
+        t.finished.then(after).catch(after);
+      } else {
+        apply();
+        after();
+      }
+    };
+    cards.forEach((c) => {
+      c.querySelector('.en-also-toggle')?.addEventListener('click', () => {
+        if (!c.classList.contains('is-open')) setOpen(c);
+      });
+      c.querySelector('.en-also-close')?.addEventListener('click', () => {
+        setOpen(null);
+        c.querySelector('.en-also-toggle')?.focus({ preventScroll: true });
+      });
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && grid.classList.contains('has-open')) setOpen(null);
+    });
+  });
+
+  /* ----------------------------------------
      電話ボタンのタップ計測（GA4）
      tel: リンクがクリックされた回数を「phone_call」イベントとして送信。
      GA4未導入・読み込み前でもエラーにならないよう安全に呼び出す。

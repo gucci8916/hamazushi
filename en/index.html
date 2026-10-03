@@ -261,11 +261,10 @@
               <li><button type="button" class="en-sw-btn" data-sw="senju" aria-pressed="false"><span>Senju <small lang="ja">千寿</small></span><span>¥3,600</span></button></li>
               <li><button type="button" class="en-sw-btn" data-sw="kaju" aria-pressed="false"><span>Kaju <small lang="ja">嘉寿</small></span><span>¥4,500</span></button></li>
             </ul>
-            <!-- TBD: number of pieces and main toppings for each set -->
             <p class="en-sw-desc is-active" data-sw="hama">Our everyday set — a good first taste of our nigiri.</p>
             <p class="en-sw-desc" data-sw="hyakuju">A step up, with a wider selection of toppings.</p>
             <p class="en-sw-desc" data-sw="senju">A generous, colorful assortment — a popular choice.</p>
-            <p class="en-sw-desc" data-sw="kaju">Our finest set, with premium toppings such as sea urchin and salmon roe.</p>
+            <p class="en-sw-desc" data-sw="kaju">Our finest set, with premium seasonal toppings.</p>
             <p class="en-signature-note">
               Lunch (Mon–Sat 11:00–<span class="tbd">15:00</span>, except public holidays): comes with chawanmushi (savory egg custard) and salad.
             </p>
@@ -273,18 +272,25 @@
           </div>
         </article>
 
-        <!-- Also on the menu: eel (switchable) and tempura, two columns even on phones -->
+        <!-- Also on the menu: two small cards. Tap one to open it (the other steps aside) -->
         <h3 class="en-sub-title reveal">Also on the menu</h3>
-        <div class="en-also-grid">
-          <article class="en-also-card reveal" data-switcher>
-            <div class="en-sw-media en-sw-media--43">
-              <img class="en-sw-img is-active" data-sw="take" src="../images/unagi_take.jpg" alt="Unaju Take — grilled eel on rice with pickles and soup">
-              <img class="en-sw-img" data-sw="matsu" src="../images/unagi_matsu.jpg" alt="Unaju Matsu — a larger portion of grilled eel on rice" loading="lazy">
-              <img class="en-sw-img" data-sw="yokubari" src="../images/unagi_yokubari.jpg" alt="Yokubari Set — unaju with a small set of nigiri" loading="lazy">
-            </div>
-            <div class="en-also-body">
-              <h4 class="en-also-title">Unaju <small lang="ja">うな重</small></h4>
+        <div class="en-also-grid" data-also-grid>
+          <article class="en-also-card reveal" data-also="unaju" data-switcher aria-label="Unaju (grilled eel on rice)">
+            <button type="button" class="en-also-toggle" aria-expanded="false" aria-controls="also-unaju-details">
+              <span class="en-sw-media en-sw-media--43 en-also-media">
+                <img class="en-sw-img is-active" data-sw="take" src="../images/unagi_take.jpg" alt="Unaju Take — grilled eel on rice with pickles and soup">
+                <img class="en-sw-img" data-sw="matsu" src="../images/unagi_matsu.jpg" alt="Unaju Matsu — a larger portion of grilled eel on rice" loading="lazy">
+                <img class="en-sw-img" data-sw="yokubari" src="../images/unagi_yokubari.jpg" alt="Yokubari Set — unaju with a small set of nigiri" loading="lazy">
+              </span>
+              <span class="en-also-head">
+                <span class="en-also-title">Unaju <small lang="ja">うな重</small></span>
+                <span class="en-also-hint">Tap for details <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+              </span>
+            </button>
+            <div class="en-also-details" id="also-unaju-details" hidden>
+              <button type="button" class="en-also-close" aria-label="Close and show both dishes"><span aria-hidden="true">&times;</span></button>
               <p class="en-also-text">Grilled eel brushed with a sweet soy glaze, served over rice in a lacquered box — with oshinko (Japanese pickles) and kimosui (clear eel-liver soup).</p>
+              <p class="en-sw-hint">Tap an option to see it.</p>
               <ul class="en-also-list en-sw-list">
                 <li><button type="button" class="en-sw-btn is-active" data-sw="take" aria-pressed="true"><span>Take <small lang="ja">竹</small></span><span>¥2,500</span></button></li>
                 <li><button type="button" class="en-sw-btn" data-sw="matsu" aria-pressed="false"><span>Matsu <small lang="ja">松</small></span><span>¥4,500</span></button></li>
@@ -297,12 +303,18 @@
             </div>
           </article>
 
-          <article class="en-also-card reveal delay-1">
-            <div class="en-sw-media en-sw-media--43">
-              <img class="en-sw-img is-active" src="../images/ippin_tempura.jpg" alt="Tempura of shrimp, fish and vegetables" loading="lazy">
-            </div>
-            <div class="en-also-body">
-              <h4 class="en-also-title">Tempura <small lang="ja">天ぷら</small></h4>
+          <article class="en-also-card reveal delay-1" data-also="tempura" aria-label="Tempura">
+            <button type="button" class="en-also-toggle" aria-expanded="false" aria-controls="also-tempura-details">
+              <span class="en-sw-media en-sw-media--43 en-also-media">
+                <img class="en-sw-img is-active" src="../images/ippin_tempura.jpg" alt="Tempura of seafood and vegetables" loading="lazy">
+              </span>
+              <span class="en-also-head">
+                <span class="en-also-title">Tempura <small lang="ja">天ぷら</small></span>
+                <span class="en-also-hint">Tap for details <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+              </span>
+            </button>
+            <div class="en-also-details" id="also-tempura-details" hidden>
+              <button type="button" class="en-also-close" aria-label="Close and show both dishes"><span aria-hidden="true">&times;</span></button>
               <p class="en-also-text">Seafood and vegetables in a light, crispy batter, fried to order.</p>
               <ul class="en-also-list">
                 <li><span>Tempura <small>1 serving</small></span><span>¥1,450</span></li>
@@ -400,12 +412,11 @@
           </div>
           <div class="en-know reveal delay-2">
             <h3 class="en-know-title">Dietary Needs</h3>
-            <p class="en-know-lead">Vegetarian, religious or allergy needs? Just let us know — our chefs will do their best to adjust your meal.</p>
-            <!-- TBD: confirm with the chef what can be adjusted (vegetarian sets, no pork / no alcohol, etc.) -->
+            <p class="en-know-lead">Vegetarian, religious or allergy needs? Just ask. As a small, independent restaurant, our chefs can often adjust dishes to suit your order.</p>
             <ul>
               <li>Tell us when you book or order — for example, no meat, no pork, no alcohol, or a food allergy.</li>
               <li>Vegetable options include cucumber, pickle and natto rolls, seasonal vegetable tempura and seaweed salad.</li>
-              <li>Please note: many dishes use soy sauce (soy, wheat), dashi (fish stock) and mirin (sweet rice wine). <span class="tbd">We are not a halal-certified restaurant.</span></li>
+              <li>Please note: many dishes use soy sauce (soy, wheat), dashi (fish stock) and mirin (sweet rice wine). We do not hold halal or other certifications, so please tell us what you need and we will do our best.</li>
             </ul>
           </div>
         </div>

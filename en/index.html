@@ -238,10 +238,13 @@
 
         <!-- TBD: when the omakase course for international guests is ready, it can be added here -->
 
-        <!-- Signature: Nigiri sushi sets -->
-        <article class="en-signature reveal">
-          <div class="en-signature-img">
-            <img src="../images/nigiri_senju.jpg" alt="Senju — an assorted nigiri sushi set" loading="lazy" width="800" height="450">
+        <!-- Signature: Nigiri sushi sets (tap a set to switch the photo) -->
+        <article class="en-signature reveal" data-switcher>
+          <div class="en-signature-img en-sw-media en-sw-media--wide">
+            <img class="en-sw-img is-active" data-sw="hama" src="../images/nigiri_hama.jpg" alt="Hama Nigiri — our everyday nigiri set">
+            <img class="en-sw-img" data-sw="hyakuju" src="../images/nigiri_hyakuju.jpg" alt="Hyakuju nigiri set" loading="lazy">
+            <img class="en-sw-img" data-sw="senju" src="../images/nigiri_senju.jpg" alt="Senju nigiri set" loading="lazy">
+            <img class="en-sw-img" data-sw="kaju" src="../images/nigiri_kajyu.jpg" alt="Kaju — our premium nigiri set" loading="lazy">
           </div>
           <div class="en-signature-body">
             <p class="en-signature-eyebrow">Our signature</p>
@@ -251,75 +254,103 @@
               Hand-pressed one piece at a time by our chefs, with seasonal seafood.
               Sit at the counter to watch your sushi being made right in front of you.
             </p>
-            <ul class="en-signature-list">
-              <li><span>Hama Nigiri <small lang="ja">浜にぎり</small></span><span>¥2,000</span></li>
-              <li><span>Hyakuju <small lang="ja">百寿</small></span><span>¥2,500</span></li>
-              <li><span>Senju <small lang="ja">千寿</small></span><span>¥3,600</span></li>
-              <li><span>Kaju <small lang="ja">嘉寿</small></span><span>¥4,500</span></li>
+            <p class="en-sw-hint">Tap a set to see it.</p>
+            <ul class="en-signature-list en-sw-list">
+              <li><button type="button" class="en-sw-btn is-active" data-sw="hama" aria-pressed="true"><span>Hama Nigiri <small lang="ja">浜にぎり</small></span><span>¥2,000</span></button></li>
+              <li><button type="button" class="en-sw-btn" data-sw="hyakuju" aria-pressed="false"><span>Hyakuju <small lang="ja">百寿</small></span><span>¥2,500</span></button></li>
+              <li><button type="button" class="en-sw-btn" data-sw="senju" aria-pressed="false"><span>Senju <small lang="ja">千寿</small></span><span>¥3,600</span></button></li>
+              <li><button type="button" class="en-sw-btn" data-sw="kaju" aria-pressed="false"><span>Kaju <small lang="ja">嘉寿</small></span><span>¥4,500</span></button></li>
             </ul>
+            <!-- TBD: number of pieces and main toppings for each set -->
+            <p class="en-sw-desc is-active" data-sw="hama">Our everyday set — a good first taste of our nigiri.</p>
+            <p class="en-sw-desc" data-sw="hyakuju">A step up, with a wider selection of toppings.</p>
+            <p class="en-sw-desc" data-sw="senju">A generous, colorful assortment — a popular choice.</p>
+            <p class="en-sw-desc" data-sw="kaju">Our finest set, with premium toppings such as sea urchin and salmon roe.</p>
             <p class="en-signature-note">
               Lunch (Mon–Sat 11:00–<span class="tbd">15:00</span>, except public holidays): comes with chawanmushi (savory egg custard) and salad.
             </p>
-            <a href="menu.html#sushi" class="en-btn en-btn--ink en-btn--sm">See all sushi</a>
+            <a href="menu.html#nigiri" class="en-btn en-btn--ink en-btn--sm">See all nigiri</a>
           </div>
         </article>
 
-        <!-- Also on the menu -->
+        <!-- Also on the menu: eel (switchable) and tempura, two columns even on phones -->
         <h3 class="en-sub-title reveal">Also on the menu</h3>
-        <div class="en-dish-grid">
-          <a href="menu.html#bowls" class="en-dish reveal">
-            <img src="../images/webp/chirashi_hama.webp" alt="Hama Chirashi — assorted sashimi over sushi rice" loading="lazy">
-            <div class="en-dish-body">
-              <h4 class="en-dish-name">Hama Chirashi</h4>
-              <p class="en-dish-ja"><span lang="ja">浜ちらし</span> · Assorted sashimi over sushi rice</p>
-              <p class="en-dish-price">¥2,000</p>
+        <div class="en-also-grid">
+          <article class="en-also-card reveal" data-switcher>
+            <div class="en-sw-media en-sw-media--43">
+              <img class="en-sw-img is-active" data-sw="take" src="../images/unagi_take.jpg" alt="Unaju Take — grilled eel on rice with pickles and soup">
+              <img class="en-sw-img" data-sw="matsu" src="../images/unagi_matsu.jpg" alt="Unaju Matsu — a larger portion of grilled eel on rice" loading="lazy">
+              <img class="en-sw-img" data-sw="yokubari" src="../images/unagi_yokubari.jpg" alt="Yokubari Set — unaju with a small set of nigiri" loading="lazy">
             </div>
-          </a>
-          <a href="menu.html#unagi" class="en-dish reveal delay-1">
-            <img src="../images/webp/unagi_take.webp" alt="Unaju — grilled eel on rice in a lacquered box" loading="lazy">
-            <div class="en-dish-body">
-              <h4 class="en-dish-name">Unaju (grilled eel on rice)</h4>
-              <p class="en-dish-ja"><span lang="ja">うな重（竹）</span> · Japanese-grown eel</p>
-              <p class="en-dish-price">¥2,500</p>
+            <div class="en-also-body">
+              <h4 class="en-also-title">Unaju <small lang="ja">うな重</small></h4>
+              <p class="en-also-text">Grilled eel brushed with a sweet soy glaze, served over rice in a lacquered box — with oshinko (Japanese pickles) and kimosui (clear eel-liver soup).</p>
+              <ul class="en-also-list en-sw-list">
+                <li><button type="button" class="en-sw-btn is-active" data-sw="take" aria-pressed="true"><span>Take <small lang="ja">竹</small></span><span>¥2,500</span></button></li>
+                <li><button type="button" class="en-sw-btn" data-sw="matsu" aria-pressed="false"><span>Matsu <small lang="ja">松</small></span><span>¥4,500</span></button></li>
+                <li><button type="button" class="en-sw-btn" data-sw="yokubari" aria-pressed="false"><span>Yokubari Set <small lang="ja">よくばりセット</small></span><span>¥4,800</span></button></li>
+              </ul>
+              <p class="en-sw-desc is-active" data-sw="take">Our standard unaju.</p>
+              <p class="en-sw-desc" data-sw="matsu">A larger portion of eel — for a big appetite.</p>
+              <p class="en-sw-desc" data-sw="yokubari">Unaju plus a small set of nigiri — enjoy eel and sushi together.</p>
+              <a href="menu.html#unagi" class="en-also-link">Eel dishes →</a>
             </div>
-          </a>
-          <a href="menu.html#bowls" class="en-dish reveal delay-2">
-            <img src="../images/webp/don_ikura.webp" alt="Salmon roe bowl" loading="lazy">
-            <div class="en-dish-body">
-              <h4 class="en-dish-name">Salmon Roe Bowl</h4>
-              <p class="en-dish-ja"><span lang="ja">イクラ丼</span> · Salmon roe over rice</p>
-              <p class="en-dish-price">¥3,000</p>
+          </article>
+
+          <article class="en-also-card reveal delay-1">
+            <div class="en-sw-media en-sw-media--43">
+              <img class="en-sw-img is-active" src="../images/ippin_tempura.jpg" alt="Tempura of shrimp, fish and vegetables" loading="lazy">
             </div>
-          </a>
+            <div class="en-also-body">
+              <h4 class="en-also-title">Tempura <small lang="ja">天ぷら</small></h4>
+              <p class="en-also-text">Seafood and vegetables in a light, crispy batter, fried to order.</p>
+              <ul class="en-also-list">
+                <li><span>Tempura <small>1 serving</small></span><span>¥1,450</span></li>
+                <li><span>Kisu tempura</span><span>¥750</span></li>
+                <li><span>Seasonal vegetables</span><span>from ¥800</span></li>
+              </ul>
+              <p class="en-also-text en-also-text--small"><strong>Kisu</strong> (Japanese whiting) is a delicate white fish — light, fluffy and a classic for tempura. The <strong>seasonal vegetables</strong> change through the year.</p>
+              <a href="menu.html#ippin" class="en-also-link">À la carte dishes →</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Full menu -->
+        <div class="en-fullmenu reveal">
+          <p>Nigiri, rolls, rice bowls, eel, fugu, lunch sets, kids' meals and drinks — all with photos and prices.</p>
+          <a href="menu.html" class="en-btn en-btn--ink">See the Full Menu</a>
         </div>
 
         <!-- Can't decide? -->
         <article class="en-course reveal">
           <div class="en-course-img">
-            <img src="../images/webp/course_main.webp" alt="A kaiseki course with sashimi, sushi and seasonal dishes" loading="lazy">
+            <img src="../images/webp/course_main.webp" alt="Example of a course meal with sashimi, sushi, a hot pot and seasonal dishes" loading="lazy">
           </div>
           <div class="en-course-body">
             <p class="en-signature-eyebrow">Can't decide?</p>
-            <h3 class="en-course-title">Leave it to us with a course</h3>
-            <p class="en-course-text">A multi-course Japanese meal with sashimi, sushi and seasonal dishes, served one after another.</p>
+            <h3 class="en-course-title">Try a Little of Everything</h3>
+            <p class="en-course-text"><strong>Sushi Kaiseki</strong> is a multi-course meal served on three trays — the easiest way to enjoy many Japanese dishes in one sitting.</p>
+            <ol class="en-course-steps">
+              <li><span>1st tray</span>Seasonal appetizers and three kinds of sashimi</li>
+              <li><span>2nd tray</span>Japanese black wagyu shabu-shabu hot pot, a fried dish and a steamed dish</li>
+              <li><span>3rd tray</span>Five pieces of nigiri, clear soup and dessert</li>
+            </ol>
             <ul class="en-signature-list en-signature-list--light">
-              <li><span>Kaiseki Course</span><span>¥5,800 / ¥6,800 / ¥7,800</span></li>
-              <li><span>Sushi Kaiseki</span><span>¥6,000 / ¥7,000 / ¥8,000</span></li>
+              <li><span>Sushi Kaiseki</span><span>¥6,000</span></li>
+              <li><span>with medium fatty tuna nigiri</span><span>¥7,000</span></li>
+              <li><span>with fatty tuna nigiri</span><span>¥8,000</span></li>
             </ul>
-            <p class="en-course-note">Reservations recommended — please call <a href="tel:+81426356983">+81-42-635-6983</a> (Japanese).</p>
+            <p class="en-course-note">Per person. Dishes change with the season. Reservations recommended — please call <a href="tel:+81426356983">+81-42-635-6983</a> (Japanese).</p>
             <a href="menu.html#kaiseki" class="en-btn en-btn--gold en-btn--sm">See the courses</a>
           </div>
         </article>
 
-        <p class="en-note reveal">All prices include tax.</p>
-        <div class="u-center reveal">
-          <a href="menu.html" class="en-btn en-btn--ink">See the Full Menu</a>
-        </div>
+        <p class="en-note reveal">All prices include tax. Photos are for illustration.</p>
       </div>
     </section>
 
     <!-- ============ (5) Good to Know ============ -->
-    <section class="en-section en-section--ink section--ink" id="good-to-know" aria-labelledby="know-title">
+    <section class="en-section en-section--story" id="good-to-know" aria-labelledby="know-title">
       <div class="en-inner">
         <div class="section-head">
           <p class="section-eyebrow reveal">GOOD TO KNOW</p>
@@ -331,7 +362,8 @@
         <div class="en-seating reveal">
           <div class="en-seating-head">
             <h3 class="en-know-title">Seating</h3>
-            <p>About 150 seats — choose the counter, a table, or a tatami room. Children are welcome, and we have a kids' menu.</p>
+            <p>About 150 seats — choose the counter, a table, or a tatami room.</p>
+            <p>Children are welcome — our <a href="menu.html#kids" class="link-gold">kids' meals</a> come with dessert and a small toy.</p>
             <!-- TBD: add "All seats are non-smoking." if true -->
             <p><span class="tbd">All seats are non-smoking.</span></p>
           </div>
@@ -367,10 +399,13 @@
             </ul>
           </div>
           <div class="en-know reveal delay-2">
-            <h3 class="en-know-title">Allergies</h3>
+            <h3 class="en-know-title">Dietary Needs</h3>
+            <p class="en-know-lead">Vegetarian, religious or allergy needs? Just let us know — our chefs will do their best to adjust your meal.</p>
+            <!-- TBD: confirm with the chef what can be adjusted (vegetarian sets, no pork / no alcohol, etc.) -->
             <ul>
-              <li>Allergies or dietary needs? Please tell our staff.</li>
-              <li>Most dishes contain fish and soy sauce (soy, wheat).</li>
+              <li>Tell us when you book or order — for example, no meat, no pork, no alcohol, or a food allergy.</li>
+              <li>Vegetable options include cucumber, pickle and natto rolls, seasonal vegetable tempura and seaweed salad.</li>
+              <li>Please note: many dishes use soy sauce (soy, wheat), dashi (fish stock) and mirin (sweet rice wine). <span class="tbd">We are not a halal-certified restaurant.</span></li>
             </ul>
           </div>
         </div>

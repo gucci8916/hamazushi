@@ -126,6 +126,18 @@
         }
       });
     });
+
+    // URLの「#nigiri」などでタブを直接開く（英語トップの各リンクから使用）
+    const openFromHash = () => {
+      const key = decodeURIComponent(window.location.hash.slice(1));
+      const target = key && document.getElementById('tab-' + key);
+      if (!target) return;
+      activateTab(target);
+      const wrap = document.querySelector('.menu-tabs-wrap') || target;
+      setTimeout(() => wrap.scrollIntoView({ block: 'start' }), 0);
+    };
+    openFromHash();
+    window.addEventListener('hashchange', openFromHash);
   }
 
   /* ----------------------------------------
@@ -339,6 +351,28 @@
       if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeLightbox();
     });
   })();
+
+  /* ----------------------------------------
+     写真の切り替え（英語トップのにぎり・うな重）
+     data-switcher の中のボタンを押すと、同じ data-sw の写真と説明に
+     フェードで入れ替わる
+  ---------------------------------------- */
+  document.querySelectorAll('[data-switcher]').forEach((box) => {
+    const buttons = box.querySelectorAll('.en-sw-btn');
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.sw;
+        buttons.forEach((b) => {
+          const on = b === btn;
+          b.classList.toggle('is-active', on);
+          b.setAttribute('aria-pressed', String(on));
+        });
+        box.querySelectorAll('.en-sw-img[data-sw], .en-sw-desc[data-sw]').forEach((el) => {
+          el.classList.toggle('is-active', el.dataset.sw === key);
+        });
+      });
+    });
+  });
 
   /* ----------------------------------------
      電話ボタンのタップ計測（GA4）

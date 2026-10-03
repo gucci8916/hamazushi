@@ -96,284 +96,737 @@
   <main id="main">
     <section class="page-hero">
       <p class="page-hero-eyebrow">MENU</p>
-      <h1 class="page-hero-title">Menu</h1>
+      <h1 class="page-hero-title" id="menu-title">Menu</h1>
       <p class="page-hero-sub">All prices include tax. Please point to the dish when ordering.</p>
     </section>
 
-    <!-- Category shortcuts (sticky) -->
-    <nav class="en-cat-nav" aria-label="Menu categories">
-      <div class="en-cat-nav-inner">
-        <a href="#sushi">Sushi</a>
-        <a href="#bowls">Chirashi &amp; Bowls</a>
-        <a href="#unagi">Eel</a>
-        <a href="#kaiseki">Kaiseki</a>
-        <a href="#fugu">Fugu</a>
-        <a href="#alacarte">À la carte &amp; Kids</a>
-        <a href="#drinks">Drinks</a>
-      </div>
-    </nav>
-
-    <div class="en-menu">
-      <div class="en-inner">
-        <p class="en-menu-intro">
-          <strong>All prices include tax.</strong> Please point to the dish when ordering — the Japanese name is shown under each dish.
-          Tap a photo to enlarge.
-        </p>
-
-        <!-- ========== Sushi Sets (Nigiri) ========== -->
-        <section class="en-menu-cat" id="sushi" aria-labelledby="cat-sushi">
-          <h2 class="en-menu-cat-title" id="cat-sushi">Sushi Sets <span>Nigiri</span></h2>
-          <!-- TBD: number of pieces and main toppings for each set -->
-          <p class="en-menu-cat-note"><span class="tbd">Number of pieces and main toppings: to be added.</span></p>
-          <div class="menu-photo-grid en-menu-grid en-menu-grid--nigiri">
-            <article class="en-item">
-              <img src="../images/webp/nigiri_hama.webp" data-full="../images/nigiri_hama.jpg" alt="Hama Nigiri — chef's selection of nigiri" loading="lazy">
-              <div class="en-item-body">
-                <h3 class="en-item-name">Hama Nigiri</h3>
-                <p class="en-item-ja"><span lang="ja">浜にぎり</span> · hama nigiri</p>
-                <p class="en-item-desc">Chef's selection of nigiri</p>
-                <p class="en-item-price">¥2,000</p>
-              </div>
-            </article>
-            <article class="en-item">
-              <img src="../images/webp/nigiri_hyakuju.webp" data-full="../images/nigiri_hyakuju.jpg" alt="Hyakuju nigiri set" loading="lazy">
-              <div class="en-item-body">
-                <h3 class="en-item-name">Hyakuju</h3>
-                <p class="en-item-ja"><span lang="ja">百寿</span> · hyakuju</p>
-                <p class="en-item-desc">Nigiri set</p>
-                <p class="en-item-price">¥2,500</p>
-              </div>
-            </article>
-            <article class="en-item">
-              <img src="../images/webp/nigiri_senju.webp" data-full="../images/nigiri_senju.jpg" alt="Senju nigiri set" loading="lazy">
-              <div class="en-item-body">
-                <h3 class="en-item-name">Senju</h3>
-                <p class="en-item-ja"><span lang="ja">千寿</span> · senju</p>
-                <p class="en-item-desc">Nigiri set</p>
-                <p class="en-item-price">¥3,600</p>
-              </div>
-            </article>
-            <article class="en-item">
-              <img src="../images/webp/nigiri_kajyu.webp" data-full="../images/nigiri_kajyu.jpg" alt="Kaju premium nigiri set" loading="lazy">
-              <div class="en-item-body">
-                <h3 class="en-item-name">Kaju</h3>
-                <p class="en-item-ja"><span lang="ja">嘉寿</span> · kaju</p>
-                <p class="en-item-desc">Premium nigiri set</p>
-                <p class="en-item-price">¥4,500</p>
-              </div>
-            </article>
-            <article class="en-item">
-              <img src="../images/webp/nigiri_maguro.webp" data-full="../images/nigiri_maguro.jpg" alt="Tuna nigiri" loading="lazy">
-              <div class="en-item-body">
-                <h3 class="en-item-name">Tuna Nigiri</h3>
-                <p class="en-item-ja"><span lang="ja">マグロ寿司</span> · maguro zushi</p>
-                <p class="en-item-desc">Nigiri topped with tuna</p>
-                <p class="en-item-price">¥2,700</p>
-              </div>
-            </article>
-            <article class="en-item">
-              <img src="../images/webp/nigiri_chutoro.webp" data-full="../images/nigiri_chutoro.jpg" alt="Medium fatty tuna nigiri" loading="lazy">
-              <div class="en-item-body">
-                <h3 class="en-item-name">Medium Fatty Tuna Nigiri</h3>
-                <p class="en-item-ja"><span lang="ja">中トロ寿司</span> · chūtoro zushi</p>
-                <p class="en-item-desc">Rich, marbled tuna belly</p>
-                <p class="en-item-price">¥4,500</p>
-              </div>
-            </article>
-          </div>
-          <p class="en-menu-cat-note">Lunch (Mon–Sat 11:00–<span class="tbd">15:00</span>, except public holidays): comes with chawanmushi (savory egg custard) and salad.</p>
-        </section>
-
-        <!-- ========== Chirashi & Rice Bowls ========== -->
-        <section class="en-menu-cat" id="bowls" aria-labelledby="cat-bowls">
-          <h2 class="en-menu-cat-title" id="cat-bowls">Chirashi &amp; Rice Bowls</h2>
-          <div class="menu-photo-grid en-menu-grid">
-            <article class="en-item">
-              <img src="../images/webp/chirashi_hama.webp" data-full="../images/chirashi_hama.jpg" alt="Hama Chirashi — assorted sashimi over sushi rice" loading="lazy">
-              <div class="en-item-body">
-                <h3 class="en-item-name">Hama Chirashi</h3>
-                <p class="en-item-ja"><span lang="ja">浜ちらし</span> · hama chirashi</p>
-                <p class="en-item-desc">Assorted sashimi over sushi rice</p>
-                <p class="en-item-price">¥2,000</p>
-              </div>
-            </article>
-            <article class="en-item">
-              <img src="../images/webp/chirashi_koto.webp" data-full="../images/chirashi_koto.jpg" alt="Koto Chirashi — premium assorted sashimi over sushi rice" loading="lazy">
-              <div class="en-item-body">
-                <h3 class="en-item-name">Koto Chirashi</h3>
-                <p class="en-item-ja"><span lang="ja">古都ちらし</span> · koto chirashi</p>
-                <p class="en-item-desc">Premium assorted sashimi over sushi rice</p>
-                <p class="en-item-price">¥3,800</p>
-              </div>
-            </article>
-            <article class="en-item">
-              <img src="../images/webp/don_kaisen.webp" data-full="../images/don_kaisen.jpg" alt="Seafood bowl" loading="lazy">
-              <div class="en-item-body">
-                <h3 class="en-item-name">Seafood Bowl</h3>
-                <p class="en-item-ja"><span lang="ja">海鮮丼</span> · kaisen-don</p>
-                <p class="en-item-desc">Assorted seafood over rice</p>
-                <p class="en-item-price">¥3,000</p>
-              </div>
-            </article>
-            <article class="en-item">
-              <img src="../images/webp/don_ikura.webp" data-full="../images/don_ikura.jpg" alt="Salmon roe bowl" loading="lazy">
-              <div class="en-item-body">
-                <h3 class="en-item-name">Salmon Roe Bowl</h3>
-                <p class="en-item-ja"><span lang="ja">イクラ丼</span> · ikura-don</p>
-                <p class="en-item-desc">Salmon roe over rice</p>
-                <p class="en-item-price">¥3,000</p>
-              </div>
-            </article>
-            <article class="en-item">
-              <img src="../images/webp/don_chutoro.webp" data-full="../images/don_chutoro.jpg" alt="Medium fatty tuna bowl" loading="lazy">
-              <div class="en-item-body">
-                <h3 class="en-item-name">Medium Fatty Tuna Bowl</h3>
-                <p class="en-item-ja"><span lang="ja">中とろ鉄火丼</span> · chūtoro tekka-don</p>
-                <p class="en-item-desc">Medium fatty tuna over sushi rice</p>
-                <p class="en-item-price">¥5,000</p>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <!-- ========== Grilled Eel (Unagi) ========== -->
-        <section class="en-menu-cat" id="unagi" aria-labelledby="cat-unagi">
-          <h2 class="en-menu-cat-title" id="cat-unagi">Grilled Eel <span>Unagi</span></h2>
-          <p class="en-menu-cat-note">Japanese-grown eel.</p>
-          <div class="menu-photo-grid en-menu-grid">
-            <article class="en-item">
-              <img src="../images/webp/unagi_take.webp" data-full="../images/unagi_take.jpg" alt="Unaju Take — grilled eel on rice" loading="lazy">
-              <div class="en-item-body">
-                <h3 class="en-item-name">Unaju Take</h3>
-                <p class="en-item-ja"><span lang="ja">うな重（竹）</span> · unajū take</p>
-                <p class="en-item-desc">Grilled eel on rice</p>
-                <p class="en-item-price">¥2,500</p>
-              </div>
-            </article>
-            <article class="en-item">
-              <img src="../images/webp/unagi_matsu.webp" data-full="../images/unagi_matsu.jpg" alt="Unaju Matsu — grilled eel on rice, larger portion" loading="lazy">
-              <div class="en-item-body">
-                <h3 class="en-item-name">Unaju Matsu</h3>
-                <p class="en-item-ja"><span lang="ja">うな重（松）</span> · unajū matsu</p>
-                <p class="en-item-desc">Grilled eel on rice, larger portion</p>
-                <p class="en-item-price">¥4,500</p>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <!-- ========== Kaiseki Courses ========== -->
-        <section class="en-menu-cat" id="kaiseki" aria-labelledby="cat-kaiseki">
-          <h2 class="en-menu-cat-title" id="cat-kaiseki">Kaiseki Courses <span>Reservations recommended</span></h2>
-          <p class="en-menu-cat-note">Kaiseki is a multi-course Japanese meal. We recommend reserving by phone: <a href="tel:+81426356983" class="link-gold">+81-42-635-6983</a> (Japanese).</p>
-          <!-- TBD: dishes included in each course -->
-          <div class="menu-photo-grid en-menu-grid en-menu-grid--two">
-            <article class="en-item">
-              <img src="../images/webp/kaiseki_tokusen.webp" data-full="../images/kaiseki_tokusen.jpg" alt="Sushi kaiseki course" loading="lazy">
-              <div class="en-item-body">
-                <h3 class="en-item-name">Sushi Kaiseki</h3>
-                <p class="en-item-ja"><span lang="ja">寿司会席</span> · sushi kaiseki</p>
-                <p class="en-item-desc"><span class="tbd">Course dishes: to be added.</span></p>
-                <ul class="en-item-prices">
-                  <li><span>Sushi Kaiseki</span><span>¥6,000</span></li>
-                  <li><span>with medium fatty tuna</span><span>¥7,000</span></li>
-                  <li><span>with fatty tuna</span><span>¥8,000</span></li>
-                </ul>
-              </div>
-            </article>
-            <article class="en-item">
-              <img src="../images/webp/course_main.webp" data-full="../images/course_main.jpg" alt="Kaiseki course" loading="lazy">
-              <div class="en-item-body">
-                <h3 class="en-item-name">Kaiseki Course</h3>
-                <p class="en-item-ja"><span lang="ja">コース</span> · kōsu</p>
-                <p class="en-item-desc"><span class="tbd">Course dishes: to be added.</span></p>
-                <ul class="en-item-prices">
-                  <li><span>¥5,800 Course</span><span>¥5,800</span></li>
-                  <li><span>¥6,800 Course</span><span>¥6,800</span></li>
-                  <li><span>¥7,800 Course</span><span>¥7,800</span></li>
-                </ul>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <!-- ========== Wild Tiger Pufferfish (Fugu) ========== -->
-        <section class="en-menu-cat" id="fugu" aria-labelledby="cat-fugu">
-          <h2 class="en-menu-cat-title" id="cat-fugu">Wild Tiger Pufferfish <span>Fugu</span></h2>
-          <p class="en-menu-cat-note">Seasonal, subject to availability.</p>
-          <ul class="en-list">
-            <li class="en-list-item">
-              <div class="en-list-body">
-                <span class="en-list-name">Tiger Pufferfish Nigiri, 2 pieces</span>
-                <span class="en-list-ja"><span lang="ja">とらふぐのにぎり 2貫</span> · torafugu no nigiri</span>
-              </div>
-              <span class="en-list-price">¥1,300</span>
-            </li>
-            <li class="en-list-item">
-              <div class="en-list-body">
-                <span class="en-list-name">Fugu Sashimi</span>
-                <span class="en-list-ja"><span lang="ja">上てっさ</span> · jō tessa — thinly sliced raw fugu</span>
-              </div>
-              <span class="en-list-price">¥3,000</span>
-            </li>
-            <li class="en-list-item">
-              <div class="en-list-body">
-                <span class="en-list-name">Fried Fugu</span>
-                <span class="en-list-ja"><span lang="ja">ふぐの唐揚げ</span> · fugu no karaage</span>
-              </div>
-              <span class="en-list-price">¥1,900</span>
-            </li>
-          </ul>
-        </section>
-
-        <!-- ========== À la carte & Kids ========== -->
-        <section class="en-menu-cat" id="alacarte" aria-labelledby="cat-alacarte">
-          <h2 class="en-menu-cat-title" id="cat-alacarte">À la carte &amp; Kids</h2>
-          <div class="menu-photo-grid en-menu-grid">
-            <article class="en-item">
-              <img src="../images/webp/ippin_tempura.webp" data-full="../images/ippin_tempura.jpg" alt="Tempura" loading="lazy">
-              <div class="en-item-body">
-                <h3 class="en-item-name">Tempura</h3>
-                <p class="en-item-ja"><span lang="ja">天ぷら（1人前）</span> · tempura</p>
-                <p class="en-item-desc">Lightly battered and fried, 1 serving</p>
-                <p class="en-item-price">¥1,450</p>
-              </div>
-            </article>
-            <article class="en-item">
-              <img src="../images/webp/ippin_chawan.webp" data-full="../images/ippin_chawan.jpg" alt="Chawanmushi — savory egg custard" loading="lazy">
-              <div class="en-item-body">
-                <h3 class="en-item-name">Chawanmushi</h3>
-                <p class="en-item-ja"><span lang="ja">茶碗蒸し</span> · chawanmushi</p>
-                <p class="en-item-desc">Savory egg custard</p>
-                <p class="en-item-price">¥550</p>
-              </div>
-            </article>
-            <article class="en-item">
-              <img src="../images/webp/kids_nigiri.webp" data-full="../images/kids_nigiri.jpg" alt="Kids' nigiri set" loading="lazy">
-              <div class="en-item-body">
-                <h3 class="en-item-name">Kids' Nigiri</h3>
-                <p class="en-item-ja"><span lang="ja">お子様にぎり</span> · okosama nigiri</p>
-                <p class="en-item-desc">Nigiri set for children</p>
-                <p class="en-item-price">¥1,500</p>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <!-- ========== Drinks ========== -->
-        <section class="en-menu-cat" id="drinks" aria-labelledby="cat-drinks">
-          <h2 class="en-menu-cat-title" id="cat-drinks">Drinks</h2>
-          <p class="en-menu-cat-note">Sake, shochu, beer, wine and soft drinks.</p>
-          <!-- TBD: English names and prices of the main drinks -->
-          <p class="en-menu-cat-note"><span class="tbd">Main drinks and prices: to be added.</span></p>
-        </section>
-
-        <div class="en-menu-footer">
-          <p><strong>Allergies?</strong> Please tell our staff.</p>
-          <p>All prices include tax. Prices and availability may change depending on the season.</p>
+    <section class="menu" id="menu" aria-labelledby="menu-title">
+      <!-- Category tabs (same structure as the Japanese menu) -->
+      <div class="menu-tabs-wrap">
+        <div class="menu-tabs" role="tablist" aria-label="Menu categories">
+          <button class="menu-tab is-active" role="tab" aria-selected="true" aria-controls="panel-seasonal" id="tab-seasonal">Seasonal</button>
+          <button class="menu-tab" role="tab" aria-selected="false" aria-controls="panel-course" id="tab-course">Courses</button>
+          <button class="menu-tab" role="tab" aria-selected="false" aria-controls="panel-kaiseki" id="tab-kaiseki">Kaiseki</button>
+          <button class="menu-tab" role="tab" aria-selected="false" aria-controls="panel-lunch" id="tab-lunch">Lunch</button>
+          <button class="menu-tab" role="tab" aria-selected="false" aria-controls="panel-nigiri" id="tab-nigiri">Nigiri</button>
+          <button class="menu-tab" role="tab" aria-selected="false" aria-controls="panel-chirashi" id="tab-chirashi">Chirashi &amp; Bowls</button>
+          <button class="menu-tab" role="tab" aria-selected="false" aria-controls="panel-maki" id="tab-maki">Rolls</button>
+          <button class="menu-tab" role="tab" aria-selected="false" aria-controls="panel-unagi" id="tab-unagi">Eel</button>
+          <button class="menu-tab" role="tab" aria-selected="false" aria-controls="panel-fugu" id="tab-fugu">Fugu</button>
+          <button class="menu-tab" role="tab" aria-selected="false" aria-controls="panel-kids" id="tab-kids">Kids</button>
+          <button class="menu-tab" role="tab" aria-selected="false" aria-controls="panel-ippin" id="tab-ippin">À la carte</button>
+          <button class="menu-tab" role="tab" aria-selected="false" aria-controls="panel-drink" id="tab-drink">Drinks</button>
         </div>
       </div>
-    </div>
+
+      <div class="menu-inner">
+        <p class="section-lead reveal">
+          All prices include tax. The Japanese name is shown with each dish — just point to it when ordering.<br>
+          Tap a photo to enlarge. Allergies or dietary needs? Please tell our staff.
+        </p>
+
+        <!-- ========== seasonal ========== -->
+        <div class="menu-panel is-active" role="tabpanel" id="panel-seasonal" aria-labelledby="tab-seasonal">
+          <h4 class="menu-category-heading">Seasonal Specials</h4>
+          <p class="menu-note">
+            <span class="tbd">Available Sat, Sep 12 – Sun, Sep 27, 2026.</span> Limited-time menu; discounts do not apply.
+          </p>
+          <div class="seasonal-flyers-wrap reveal">
+            <div class="seasonal-flyers">
+              <div class="seasonal-flyer">
+                <img src="../images/webp/seasonal1.webp" data-full="../images/seasonal1.jpg" alt="Autumn Harvest Gozen ¥3,800 — seasonal set meal" loading="lazy">
+              </div>
+              <div class="seasonal-flyer">
+                <img src="../images/webp/seasonal2.webp" data-full="../images/seasonal2.jpg" alt="Weekday specials: Saiju ¥3,800 and Fukuju ¥2,500" loading="lazy">
+              </div>
+            </div>
+          </div>
+          <div class="menu-list reveal u-mt-2">
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Autumn Harvest Gozen</span><span class="menu-list-desc" lang="ja">秋の味覚 旬の恵み御膳 — seafood &amp; mushroom hot pot, vegetable tempura, medium fatty tuna &amp; Pacific saury sashimi, sushi, small dishes, clear soup and sesame dumplings</span></div>
+              <span class="menu-list-price">¥3,800</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Saiju <small>(weekdays only)</small></span><span class="menu-list-desc" lang="ja">彩寿 — a large platter of assorted nigiri, rolls and sashimi, with small dishes and miso soup</span></div>
+              <span class="menu-list-price">¥3,800</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Fukuju <small>(weekdays only)</small></span><span class="menu-list-desc" lang="ja">福寿 — 8 pieces of nigiri with tempura and clear soup</span></div>
+              <span class="menu-list-price">¥2,500</span>
+            </div>
+          </div>
+          <p class="menu-note">
+            Weekday specials: Mon, Tue, Thu and Fri (except public holidays).<br>
+            Contents may change depending on what is in season. Photos are for illustration.
+          </p>
+        </div>
+        <!-- ========== course ========== -->
+        <div class="menu-panel" role="tabpanel" id="panel-course" aria-labelledby="tab-course">
+          <h4 class="menu-category-heading">Shokado <small class="en-h-sub">— a course served in a lacquered box</small></h4>
+          <div class="shokado-grid">
+            <div class="menu-photo-card reveal">
+              <img src="../images/webp/course_fuji.webp" data-full="../images/course_fuji.jpg" alt="Shokado Fuji" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Shokado Fuji</span><span class="en-mi-ja" lang="ja">松華堂 藤</span></div>
+                <span class="menu-photo-price">¥6,300</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal delay-1">
+              <img src="../images/webp/course_suisen.webp" data-full="../images/course_suisen.jpg" alt="Shokado Suisen" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Shokado Suisen</span><span class="en-mi-ja" lang="ja">松華堂 水仙</span></div>
+                <span class="menu-photo-price">¥6,800</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal delay-2">
+              <img src="../images/webp/course_suzuran.webp" data-full="../images/course_suzuran.jpg" alt="Shokado Suzuran" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Shokado Suzuran</span><span class="en-mi-ja" lang="ja">松華堂 鈴蘭</span></div>
+                <span class="menu-photo-price">¥7,800</span>
+              </div>
+            </div>
+          </div>
+          <h4 class="menu-category-heading u-mt-3">Courses</h4>
+          <div class="course-layout">
+            <div class="course-layout-img reveal">
+              <img src="../images/webp/course_main.webp" data-full="../images/course_main.jpg" alt="A course meal with sashimi, sushi, a hot pot and seasonal dishes" loading="lazy">
+            </div>
+            <div class="course-layout-list reveal delay-1">
+                <div class="menu-list reveal">
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">¥5,800 Course</span><span class="menu-list-desc" lang="ja">5,800円コース</span></div>
+              <span class="menu-list-price">¥5,800</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">¥6,800 Course</span><span class="menu-list-desc" lang="ja">6,800円コース</span></div>
+              <span class="menu-list-price">¥6,800</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">¥7,800 Course</span><span class="menu-list-desc" lang="ja">7,800円コース</span></div>
+              <span class="menu-list-price">¥7,800</span>
+            </div>
+          </div>
+            </div>
+          </div>
+          <p class="menu-note">
+            Prices are per person. We recommend reserving courses by phone: <a href="tel:+81426356983" class="link-gold">+81-42-635-6983</a> (Japanese).<br>
+            Dishes change with the season and the day's market.<br>
+            All-you-can-drink option available (2 hours, groups of 15 or more).
+          </p>
+        </div>
+        <!-- ========== kaiseki ========== -->
+        <div class="menu-panel" role="tabpanel" id="panel-kaiseki" aria-labelledby="tab-kaiseki">
+          <div class="kaiseki-images">
+            <div class="kaiseki-image reveal">
+              <img src="../images/webp/kaiseki_tokusen.webp" data-full="../images/kaiseki_tokusen.jpg" alt="Seasonal sushi kaiseki — three trays of dishes (photo shows the medium fatty tuna kaiseki)" loading="lazy">
+            </div>
+          </div>
+          <div class="menu-list reveal u-mt-2">
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Sushi Kaiseki</span><span class="menu-list-desc" lang="ja">寿司会席</span></div>
+              <span class="menu-list-price">¥6,000</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Medium Fatty Tuna Kaiseki</span><span class="menu-list-desc" lang="ja">中とろ会席 — with 5 pieces of medium fatty tuna nigiri</span></div>
+              <span class="menu-list-price">¥7,000</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Fatty Tuna Kaiseki</span><span class="menu-list-desc" lang="ja">大とろ会席 — with 5 pieces of fatty tuna nigiri</span></div>
+              <span class="menu-list-price">¥8,000</span>
+            </div>
+          </div>
+          <ol class="en-tray-list reveal">
+            <li><strong>1st tray</strong> — seasonal appetizers, a small dish and three kinds of sashimi</li>
+            <li><strong>2nd tray</strong> — Japanese black wagyu shabu-shabu hot pot, a fried dish and a steamed dish</li>
+            <li><strong>3rd tray</strong> — 5 pieces of nigiri, clear soup and dessert</li>
+          </ol>
+          <p class="menu-note">
+            The photo shows the Medium Fatty Tuna Kaiseki.<br>
+            Dishes change with the season and the day's market.<br>
+            We recommend reserving kaiseki by phone.
+          </p>
+        </div>
+        <!-- ========== lunch ========== -->
+        <div class="menu-panel" role="tabpanel" id="panel-lunch" aria-labelledby="tab-lunch">
+          <div class="lunch-photos">
+            <div class="lunch-photo-item reveal">
+              <img src="../images/webp/lunch1.webp" data-full="../images/lunch1.jpg" alt="Lunch menu: daily set, nigiri sets and rice bowl sets" loading="lazy">
+            </div>
+            <div class="lunch-photo-item reveal delay-1">
+              <img src="../images/webp/lunch2.webp" data-full="../images/lunch2.jpg" alt="Lunch menu: tempura bowl, green tea soba and tempura sets, kids' menu and rolls" loading="lazy">
+            </div>
+          </div>
+          <p class="menu-note">
+            Mon–Sat 11:00–15:00 (except Sundays and public holidays), dine-in only.<br>
+            Every lunch set comes with salad, chawanmushi (savory egg custard), clear soup and dessert.
+          </p>
+          <h4 class="menu-category-heading">Lunch Sets</h4>
+          <div class="menu-list reveal">
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Daily Hama-chan Set <small>(our recommendation)</small></span><span class="menu-list-desc" lang="ja">日替わり浜ちゃんセット — nigiri, sashimi and a small dish of the day</span></div>
+              <span class="menu-list-price">¥1,450</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Chirashi Set</span><span class="menu-list-desc" lang="ja">ちらしセット</span></div>
+              <span class="menu-list-price">¥1,450</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Lunch Nigiri Set</span><span class="menu-list-desc" lang="ja">ランチにぎりセット</span></div>
+              <span class="menu-list-price">¥1,300</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Lunch Nigiri 1.5 Set</span><span class="menu-list-desc" lang="ja">ランチにぎり1.5セット — a larger nigiri set</span></div>
+              <span class="menu-list-price">¥1,800</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Roast Beef Bowl Set</span><span class="menu-list-desc" lang="ja">ローストビーフ丼セット</span></div>
+              <span class="menu-list-price">¥1,500</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Five-Color Bowl Set</span><span class="menu-list-desc" lang="ja">五色丼セット — five kinds of seafood over rice</span></div>
+              <span class="menu-list-price">¥1,800</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Salmon Bowl Set</span><span class="menu-list-desc" lang="ja">サーモン丼セット</span></div>
+              <span class="menu-list-price">¥1,800</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Tuna Bowl Set</span><span class="menu-list-desc" lang="ja">マグロ丼セット</span></div>
+              <span class="menu-list-price">¥1,800</span>
+            </div>
+          </div>
+          <h4 class="menu-category-heading u-mt-3">Value Sets</h4>
+          <div class="menu-list reveal">
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Tempura Bowl Set</span><span class="menu-list-desc" lang="ja">ランチ天丼セット</span></div>
+              <span class="menu-list-price">¥1,500</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Green Tea Soba Set</span><span class="menu-list-desc" lang="ja">ランチ茶そばセット</span></div>
+              <span class="menu-list-price">¥1,450</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Tempura Set</span><span class="menu-list-desc" lang="ja">ランチ天ぷらセット</span></div>
+              <span class="menu-list-price">¥1,400</span>
+            </div>
+          </div>
+          <p class="menu-note">
+            Single items: Lunch add-on (salad, chawanmushi, soup, dessert) ¥450 / Mini tempura bowl ¥800 / Mini green tea soba ¥750 / Mini tempura ¥700
+          </p>
+          <h4 class="menu-category-heading u-mt-3">Lunch Rolls</h4>
+          <div class="menu-list reveal">
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Seaweed Roll</span><span class="menu-list-desc" lang="ja">ランチのり巻</span></div>
+              <span class="menu-list-price">¥800</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Natto Roll</span><span class="menu-list-desc" lang="ja">ランチ納豆巻 — fermented soybeans</span></div>
+              <span class="menu-list-price">¥800</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Tuna Roll</span><span class="menu-list-desc" lang="ja">ランチ鉄火巻</span></div>
+              <span class="menu-list-price">¥1,500</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Pickle Roll</span><span class="menu-list-desc" lang="ja">ランチおしんこ巻</span></div>
+              <span class="menu-list-price">¥800</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Cucumber Roll</span><span class="menu-list-desc" lang="ja">ランチかっぱ巻</span></div>
+              <span class="menu-list-price">¥800</span>
+            </div>
+          </div>
+          <p class="menu-note">
+            Kids' meals are also available at lunch — see the <a href="#kids" class="link-gold">Kids</a> tab.
+          </p>
+        </div>
+        <!-- ========== nigiri ========== -->
+        <div class="menu-panel" role="tabpanel" id="panel-nigiri" aria-labelledby="tab-nigiri">
+          <div class="menu-photo-grid">
+            <div class="menu-photo-card reveal">
+              <img src="../images/webp/nigiri_kajyu.webp" data-full="../images/nigiri_kajyu.jpg" alt="Kaju" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Kaju</span><span class="en-mi-ja" lang="ja">嘉寿</span><span class="en-mi-desc">Our premium nigiri set</span></div>
+                <span class="menu-photo-price">¥4,500</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal delay-1">
+              <img src="../images/webp/nigiri_senju.webp" data-full="../images/nigiri_senju.jpg" alt="Senju" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Senju</span><span class="en-mi-ja" lang="ja">千寿</span><span class="en-mi-desc">Nigiri set</span></div>
+                <span class="menu-photo-price">¥3,600</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal delay-2">
+              <img src="../images/webp/nigiri_hyakuju.webp" data-full="../images/nigiri_hyakuju.jpg" alt="Hyakuju" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Hyakuju</span><span class="en-mi-ja" lang="ja">百寿</span><span class="en-mi-desc">Nigiri set</span></div>
+                <span class="menu-photo-price">¥2,500</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal">
+              <img src="../images/webp/nigiri_hama.webp" data-full="../images/nigiri_hama.jpg" alt="Hama Nigiri" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Hama Nigiri</span><span class="en-mi-ja" lang="ja">浜にぎり</span><span class="en-mi-desc">Chef's selection of nigiri</span></div>
+                <span class="menu-photo-price">¥2,000</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal delay-1">
+              <img src="../images/webp/nigiri_chutoro.webp" data-full="../images/nigiri_chutoro.jpg" alt="Medium Fatty Tuna Nigiri" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Medium Fatty Tuna Nigiri</span><span class="en-mi-ja" lang="ja">中トロ寿司</span><span class="en-mi-desc">Rich, marbled tuna belly</span></div>
+                <span class="menu-photo-price">¥4,500</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal delay-2">
+              <img src="../images/webp/nigiri_maguro.webp" data-full="../images/nigiri_maguro.jpg" alt="Tuna Nigiri" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Tuna Nigiri</span><span class="en-mi-ja" lang="ja">マグロ寿司</span><span class="en-mi-desc">Nigiri topped with tuna</span></div>
+                <span class="menu-photo-price">¥2,700</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal">
+              <img src="../images/webp/nigiri_tekka.webp" data-full="../images/nigiri_tekka.jpg" alt="Tuna Nigiri &amp; Rolls" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Tuna Nigiri &amp; Rolls</span><span class="en-mi-ja" lang="ja">鉄火まぐろ</span><span class="en-mi-desc">Tuna nigiri with tuna rolls</span></div>
+                <span class="menu-photo-price">¥2,700</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal delay-1">
+              <img src="../images/webp/nigiri_choju.webp" data-full="../images/nigiri_choju.jpg" alt="Choju" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Choju</span><span class="en-mi-ja" lang="ja">長寿</span><span class="en-mi-desc">Nigiri set</span></div>
+                <span class="menu-photo-price">¥2,800</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal delay-2">
+              <img src="../images/webp/nigiri_kotobuki.webp" data-full="../images/nigiri_kotobuki.jpg" alt="Kotobuki Platter" loading="lazy">
+              <div class="menu-photo-info menu-photo-info--multi">
+                <div class="menu-photo-row"><span class="menu-photo-name">Kotobuki Platter <span class="en-mi-ja" lang="ja">寿にぎり</span></span></div>
+                <p class="en-mi-desc">A large nigiri platter to share</p>
+                <div class="menu-photo-row menu-photo-row--sub"><span class="menu-photo-sub-label">For 4 <span class="en-mi-ja" lang="ja">4人前</span></span><span class="menu-photo-price">¥12,000</span></div>
+                <div class="menu-photo-row menu-photo-row--sub"><span class="menu-photo-sub-label">For 5 <span class="en-mi-ja" lang="ja">5人前</span></span><span class="menu-photo-price">¥15,000</span></div>
+              </div>
+            </div>
+          </div>
+          <p class="menu-note">
+            <span class="tbd">Number of pieces and main toppings for each set: to be added.</span><br>
+            Toppings may change depending on the day's market.<br>
+            Lunch (Mon–Sat 11:00–15:00, except Sundays and public holidays): comes with chawanmushi and salad.<br>
+            Dine-in: comes with soup and coffee jelly ice cream.
+          </p>
+        </div>
+        <!-- ========== chirashi ========== -->
+        <div class="menu-panel" role="tabpanel" id="panel-chirashi" aria-labelledby="tab-chirashi">
+          <div class="menu-photo-grid">
+            <div class="menu-photo-card reveal">
+              <img src="../images/webp/chirashi_bara.webp" data-full="../images/chirashi_bara.jpg" alt="Bara Chirashi (for 3)" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Bara Chirashi (for 3)</span><span class="en-mi-ja" lang="ja">具材たっぷりバラちらし（3人前）</span><span class="en-mi-desc">Diced seafood over sushi rice, to share</span></div>
+                <span class="menu-photo-price">¥7,000</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal delay-1">
+              <img src="../images/webp/chirashi_koto.webp" data-full="../images/chirashi_koto.jpg" alt="Koto Chirashi" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Koto Chirashi</span><span class="en-mi-ja" lang="ja">古都ちらし</span><span class="en-mi-desc">Premium assorted sashimi over sushi rice</span></div>
+                <span class="menu-photo-price">¥3,800</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal delay-2">
+              <img src="../images/webp/chirashi_hama.webp" data-full="../images/chirashi_hama.jpg" alt="Hama Chirashi" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Hama Chirashi</span><span class="en-mi-ja" lang="ja">浜ちらし</span><span class="en-mi-desc">Assorted sashimi over sushi rice</span></div>
+                <span class="menu-photo-price">¥2,000</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal">
+              <img src="../images/webp/don_kaisen.webp" data-full="../images/don_kaisen.jpg" alt="Seafood Bowl" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Seafood Bowl</span><span class="en-mi-ja" lang="ja">海鮮丼</span><span class="en-mi-desc">Assorted seafood over rice</span></div>
+                <span class="menu-photo-price">¥3,000</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal delay-1">
+              <img src="../images/webp/don_ikura.webp" data-full="../images/don_ikura.jpg" alt="Salmon Roe Bowl" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Salmon Roe Bowl</span><span class="en-mi-ja" lang="ja">イクラ丼</span><span class="en-mi-desc">Salmon roe over rice</span></div>
+                <span class="menu-photo-price">¥3,000</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal delay-2">
+              <img src="../images/webp/don_tekka2.webp" data-full="../images/don_tekka2.jpg" alt="Tuna Bowls" loading="lazy">
+              <div class="menu-photo-info menu-photo-info--multi">
+                <div class="menu-photo-row"><span class="menu-photo-name">Tuna Bowls <span class="en-mi-ja" lang="ja">鉄火丼・まぐろ漬丼</span></span></div>
+                <div class="menu-photo-row menu-photo-row--sub"><span class="menu-photo-sub-label">Tuna Bowl <span class="en-mi-ja" lang="ja">鉄火丼</span></span><span class="menu-photo-price">¥2,800</span></div>
+                <div class="menu-photo-row menu-photo-row--sub"><span class="menu-photo-sub-label">Marinated Tuna Bowl <span class="en-mi-ja" lang="ja">まぐろ漬丼</span></span><span class="menu-photo-price">¥2,500</span></div>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal">
+              <img src="../images/webp/don_negitoro.webp" data-full="../images/don_negitoro.jpg" alt="Minced Tuna Bowl" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Minced Tuna Bowl</span><span class="en-mi-ja" lang="ja">ねぎとろ丼</span><span class="en-mi-desc">Minced fatty tuna with green onion</span></div>
+                <span class="menu-photo-price">¥2,500</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal delay-1">
+              <img src="../images/webp/don_chutoro.webp" data-full="../images/don_chutoro.jpg" alt="Medium Fatty Tuna Bowl" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Medium Fatty Tuna Bowl</span><span class="en-mi-ja" lang="ja">中とろ鉄火丼</span><span class="en-mi-desc">Medium fatty tuna over sushi rice</span></div>
+                <span class="menu-photo-price">¥5,000</span>
+              </div>
+            </div>
+          </div>
+          <p class="menu-note">
+            Toppings may change depending on the day's market.<br>
+            Lunch (Mon–Sat 11:00–15:00, except Sundays and public holidays): comes with chawanmushi and salad.<br>
+            Dine-in: comes with soup and coffee jelly ice cream.
+          </p>
+        </div>
+        <!-- ========== maki ========== -->
+        <div class="menu-panel" role="tabpanel" id="panel-maki" aria-labelledby="tab-maki">
+          <div class="course-layout">
+            <div class="course-layout-img reveal">
+              <img src="../images/webp/maki_futomaki.webp" data-full="../images/maki_futomaki.jpg" alt="Futomaki — our thick sushi roll" loading="lazy">
+              <div class="course-card-caption">
+                <span class="menu-photo-name">Futomaki <span class="en-mi-ja" lang="ja">こだわりの太巻</span></span>
+                <span class="menu-photo-price">¥1,500</span>
+              </div>
+            </div>
+            <div class="course-layout-list reveal delay-1">
+          <div class="menu-list reveal">
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Tuna Roll</span><span class="menu-list-desc" lang="ja">鉄火巻</span></div>
+              <span class="menu-list-price">¥2,100</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Three-Color Roll</span><span class="menu-list-desc" lang="ja">三色巻</span></div>
+              <span class="menu-list-price">¥1,360</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Seaweed Roll</span><span class="menu-list-desc" lang="ja">のり巻</span></div>
+              <span class="menu-list-price">¥1,000</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Cucumber Roll</span><span class="menu-list-desc" lang="ja">かっぱ巻</span></div>
+              <span class="menu-list-price">¥1,000</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Pickle Roll</span><span class="menu-list-desc" lang="ja">お新香巻</span></div>
+              <span class="menu-list-price">¥1,000</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Natto Roll</span><span class="menu-list-desc" lang="ja">納豆巻 — fermented soybeans</span></div>
+              <span class="menu-list-price">¥1,000</span>
+            </div>
+          </div>
+            </div>
+          </div>
+          <p class="menu-note">
+            Contents may change depending on the season and the day's market.
+          </p>
+        </div>
+        <!-- ========== unagi ========== -->
+        <div class="menu-panel" role="tabpanel" id="panel-unagi" aria-labelledby="tab-unagi">
+          <div class="menu-photo-grid">
+            <div class="menu-photo-card reveal">
+              <img src="../images/webp/unagi_matsu.webp" data-full="../images/unagi_matsu.jpg" alt="Unaju Matsu" loading="lazy">
+              <div class="menu-photo-info menu-photo-info--multi">
+                <div class="menu-photo-row"><span class="menu-photo-name">Unaju Matsu <span class="en-mi-ja" lang="ja">うな重（松）</span></span><span class="menu-photo-price">¥4,500</span></div>
+                <p class="en-mi-desc">Grilled eel on rice — large portion</p>
+                <div class="menu-photo-row menu-photo-row--sub"><span class="menu-photo-sub-label">Kabayaki (grilled eel only) <span class="en-mi-ja" lang="ja">かば焼</span></span><span class="menu-photo-price">¥4,300</span></div>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal delay-1">
+              <img src="../images/webp/unagi_take.webp" data-full="../images/unagi_take.jpg" alt="Unaju Take" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Unaju Take</span><span class="en-mi-ja" lang="ja">うな重（竹）</span><span class="en-mi-desc">Grilled eel on rice</span></div>
+                <span class="menu-photo-price">¥2,500</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal delay-2">
+              <img src="../images/webp/unagi_yokubari.webp" data-full="../images/unagi_yokubari.jpg" alt="Yokubari Set" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Yokubari Set</span><span class="en-mi-ja" lang="ja">よくばりセット</span><span class="en-mi-desc">Unaju with a small set of nigiri</span></div>
+                <span class="menu-photo-price">¥4,800</span>
+              </div>
+            </div>
+          </div>
+          <p class="menu-note">
+            We use Japanese-grown eel. Prices may change with the market.<br>
+            Lunch (Mon–Sat 11:00–15:00, except Sundays and public holidays): comes with chawanmushi and salad.<br>
+            Dine-in: comes with coffee jelly ice cream.
+          </p>
+        </div>
+        <!-- ========== fugu ========== -->
+        <div class="menu-panel" role="tabpanel" id="panel-fugu" aria-labelledby="tab-fugu">
+          <h4 class="menu-category-heading">Pufferfish (Fugu) Dishes</h4>
+          <div class="menu-list reveal">
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Fugu Sashimi</span><span class="menu-list-desc" lang="ja">上てっさ — wild tiger pufferfish</span></div>
+              <span class="menu-list-price">¥3,000</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Premium Fugu Sashimi</span><span class="menu-list-desc" lang="ja">特上てっさ — wild tiger pufferfish</span></div>
+              <span class="menu-list-price">¥6,000</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Fugu Hot Pot</span><span class="menu-list-desc" lang="ja">上てっちり — wild tiger pufferfish</span></div>
+              <span class="menu-list-price">¥3,600</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Premium Fugu Hot Pot</span><span class="menu-list-desc" lang="ja">特上てっちり — wild tiger pufferfish</span></div>
+              <span class="menu-list-price">¥7,000</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Tiger Pufferfish Nigiri, 2 pieces</span><span class="menu-list-desc" lang="ja">とらふぐのにぎり 2貫</span></div>
+              <span class="menu-list-price">¥1,300</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Pufferfish Nigiri, 4 pieces</span><span class="menu-list-desc" lang="ja">ふぐのにぎり 4貫</span></div>
+              <span class="menu-list-price">¥1,000</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Fried Fugu</span><span class="menu-list-desc" lang="ja">ふぐの唐揚げ</span></div>
+              <span class="menu-list-price">¥1,900</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Fugu Milt with Ponzu</span><span class="menu-list-desc" lang="ja">白子ポン酢</span></div>
+              <span class="menu-list-price">¥2,900</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Fried Fugu Milt</span><span class="menu-list-desc" lang="ja">白子揚げ</span></div>
+              <span class="menu-list-price">¥2,900</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Grilled Fugu Milt</span><span class="menu-list-desc" lang="ja">白子焼き</span></div>
+              <span class="menu-list-price">¥2,900</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Fugu Milt Chawanmushi</span><span class="menu-list-desc" lang="ja">白子茶碗蒸し</span></div>
+              <span class="menu-list-price">¥1,800</span>
+            </div>
+          </div>
+          <p class="menu-note">
+            All prices include tax.<br>
+            Wild tiger pufferfish is seasonal and may not always be available.
+          </p>
+        </div>
+        <!-- ========== kids ========== -->
+        <div class="menu-panel" role="tabpanel" id="panel-kids" aria-labelledby="tab-kids">
+          <div class="menu-photo-grid">
+            <div class="menu-photo-card reveal">
+              <img src="../images/webp/kids_nigiri.webp" data-full="../images/kids_nigiri.jpg" alt="Kids' Nigiri" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Kids' Nigiri</span><span class="en-mi-ja" lang="ja">お子様にぎり</span><span class="en-mi-desc">Served in a bullet-train plate</span></div>
+                <span class="menu-photo-price">¥1,500</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal delay-1">
+              <img src="../images/webp/kids_car.webp" data-full="../images/kids_car.jpg" alt="My Car" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">My Car</span><span class="en-mi-ja" lang="ja">ぼくの車</span><span class="en-mi-desc">Rolls served in a toy-car plate</span></div>
+                <span class="menu-photo-price">¥1,000</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal delay-2">
+              <img src="../images/webp/kids_maku.webp" data-full="../images/kids_maku.jpg" alt="Kids' Makunouchi" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Kids' Makunouchi</span><span class="en-mi-ja" lang="ja">お子様幕の内</span><span class="en-mi-desc">A box of small dishes for children</span></div>
+                <span class="menu-photo-price">¥2,500</span>
+              </div>
+            </div>
+          </div>
+          <p class="menu-note">
+            Kids' meals are also available at lunch.<br>
+            Each comes with chawanmushi, soup, dessert and a small toy.
+          </p>
+        </div>
+        <!-- ========== ippin ========== -->
+        <div class="menu-panel" role="tabpanel" id="panel-ippin" aria-labelledby="tab-ippin">
+          <div class="menu-photo-grid">
+            <div class="menu-photo-card reveal">
+              <img src="../images/webp/ippin_tempura.webp" data-full="../images/ippin_tempura.jpg" alt="Tempura (1 serving)" loading="lazy">
+              <div class="menu-photo-info menu-photo-info--multi">
+                <div class="menu-photo-row"><span class="menu-photo-name">Tempura (1 serving) <span class="en-mi-ja" lang="ja">天ぷら（1人前）</span></span><span class="menu-photo-price">¥1,450</span></div>
+                <p class="en-mi-desc">Lightly battered and fried seafood and vegetables</p>
+                <div class="menu-photo-row menu-photo-row--sub"><span class="menu-photo-sub-label">Kisu (Japanese whiting) tempura <span class="en-mi-ja" lang="ja">キスの天ぷら</span></span><span class="menu-photo-price">¥750</span></div>
+                <div class="menu-photo-row menu-photo-row--sub"><span class="menu-photo-sub-label">Seasonal vegetable tempura <span class="en-mi-ja" lang="ja">季節の野菜天ぷら</span></span><span class="menu-photo-price">from ¥800</span></div>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal delay-1">
+              <img src="../images/webp/ippin_karei.webp" data-full="../images/ippin_karei.jpg" alt="Fried Flounder" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Fried Flounder</span><span class="en-mi-ja" lang="ja">カレイの唐揚</span><span class="en-mi-desc">Crispy deep-fried whole flounder</span></div>
+                <span class="menu-photo-price">from ¥1,650</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal delay-2">
+              <img src="../images/webp/ippin_buri.webp" data-full="../images/ippin_buri.jpg" alt="Grilled Yellowtail Collar" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Grilled Yellowtail Collar</span><span class="en-mi-ja" lang="ja">ブリのカマ焼</span><span class="en-mi-desc">Salt-grilled, rich and juicy</span></div>
+                <span class="menu-photo-price">¥1,430–1,650</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal">
+              <img src="../images/webp/ippin_chawan.webp" data-full="../images/ippin_chawan.jpg" alt="Chawanmushi" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Chawanmushi</span><span class="en-mi-ja" lang="ja">茶碗蒸し</span><span class="en-mi-desc">Savory steamed egg custard</span></div>
+                <span class="menu-photo-price">¥550</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal delay-1">
+              <img src="../images/webp/ippin_oshinko.webp" data-full="../images/ippin_oshinko.jpg" alt="Japanese Pickles" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Japanese Pickles</span><span class="en-mi-ja" lang="ja">お新香</span></div>
+                <span class="menu-photo-price">¥330</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal delay-2">
+              <img src="../images/webp/ippin_ozukuri.webp" data-full="../images/ippin_ozukuri.jpg" alt="Sashimi Platter" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Sashimi Platter</span><span class="en-mi-ja" lang="ja">お造り</span><span class="en-mi-desc">Assorted sliced raw fish</span></div>
+                <span class="menu-photo-price">from ¥2,200</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal">
+              <img src="../images/webp/ippin_ajitaki.webp" data-full="../images/ippin_ajitaki.jpg" alt="Horse Mackerel Tataki" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Horse Mackerel Tataki</span><span class="en-mi-ja" lang="ja">アジタタキ</span><span class="en-mi-desc">Chopped raw horse mackerel with ginger and herbs</span></div>
+                <span class="menu-photo-price">from ¥1,320</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal delay-1">
+              <img src="../images/webp/ippin_seafood.webp" data-full="../images/ippin_seafood.jpg" alt="Seafood Salad" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Seafood Salad</span><span class="en-mi-ja" lang="ja">シーフードサラダ</span></div>
+                <span class="menu-photo-price">¥770</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal delay-2">
+              <img src="../images/webp/ippin_kaiso.webp" data-full="../images/ippin_kaiso.jpg" alt="Seaweed Salad" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Seaweed Salad</span><span class="en-mi-ja" lang="ja">海藻サラダ</span></div>
+                <span class="menu-photo-price">¥550</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal">
+              <img src="../images/webp/ippin_agdofu.webp" data-full="../images/ippin_agdofu.jpg" alt="Fried Tofu Salad" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Fried Tofu Salad</span><span class="en-mi-ja" lang="ja">揚げ豆腐サラダ</span></div>
+                <span class="menu-photo-price">¥770</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal delay-1">
+              <img src="../images/webp/ippin_shrimp.webp" data-full="../images/ippin_shrimp.jpg" alt="Shrimp Salad" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Shrimp Salad</span><span class="en-mi-ja" lang="ja">シュリンプサラダ</span></div>
+                <span class="menu-photo-price">¥770</span>
+              </div>
+            </div>
+            <div class="menu-photo-card reveal delay-2">
+              <img src="../images/webp/ippin_sunomono.webp" data-full="../images/ippin_sunomono.jpg" alt="Vinegared Seafood" loading="lazy">
+              <div class="menu-photo-info en-mi">
+                <div class="en-mi-text"><span class="menu-photo-name">Vinegared Seafood</span><span class="en-mi-ja" lang="ja">酢の物</span><span class="en-mi-desc">Seafood and vegetables in a light vinegar dressing</span></div>
+                <span class="menu-photo-price">from ¥880</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-list reveal u-mt-2">
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Mozuku Seaweed in Vinegar</span><span class="menu-list-desc" lang="ja">もずく酢</span></div>
+              <span class="menu-list-price">¥440</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Mozuku Seaweed Soup</span><span class="menu-list-desc" lang="ja">もずく汁</span></div>
+              <span class="menu-list-price">¥440</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Clam Miso Soup</span><span class="menu-list-desc" lang="ja">あさり汁</span></div>
+              <span class="menu-list-price">¥440</span>
+            </div>
+            <div class="menu-list-item">
+              <div class="menu-list-body"><span class="menu-list-name">Freshwater Clam Miso Soup</span><span class="menu-list-desc" lang="ja">しじみ汁</span></div>
+              <span class="menu-list-price">¥440</span>
+            </div>
+          </div>
+          <p class="menu-note">
+            Prices marked "from" change with the season and the day's market.
+          </p>
+        </div>
+        <!-- ========== drink ========== -->
+        <div class="menu-panel" role="tabpanel" id="panel-drink" aria-labelledby="tab-drink">
+          <div class="en-drink-grid">
+            <div class="en-drink-card reveal">
+              <h5 class="en-drink-title">Sake <small lang="ja">日本酒</small></h5>
+              <ul class="en-drink-list">
+                <li><span>Takao no Tengu — local Hachioji sake, 720 ml <small lang="ja">高尾の天狗</small></span><span>¥5,000</span></li>
+                <li><span>Takao no Tengu — glass</span><span>¥1,300</span></li>
+                <li><span>Suiro — junmai daiginjo, fruity, 720 ml <small lang="ja">翠露</small></span><span>¥5,000</span></li>
+                <li><span>Shirakabegura — junmai, 640 ml <small lang="ja">白壁蔵</small></span><span>¥3,600</span></li>
+                <li><span>Mio — sparkling sake, 300 ml <small lang="ja">澪</small></span><span>¥1,500</span></li>
+                <li><span>Gokai — unpasteurized, 300 ml <small lang="ja">豪快 生</small></span><span>¥1,700</span></li>
+                <li><span>Sawanoi — dry junmai, 300 ml <small lang="ja">澤乃井</small></span><span>¥1,800</span></li>
+                <li><span>Gokai — dry, 1 go (180 ml) / 2 go <small lang="ja">豪快 辛口</small></span><span>¥600 / ¥1,200</span></li>
+                <li><span>Yamadanishiki — glass <small lang="ja">山田錦</small></span><span>¥1,000</span></li>
+              </ul>
+            </div>
+            <div class="en-drink-card reveal">
+              <h5 class="en-drink-title">Shochu <small lang="ja">焼酎</small></h5>
+              <ul class="en-drink-list">
+                <li><span>Ikkomon — sweet potato, 720 ml / glass <small lang="ja">一刻者</small></span><span>¥5,500 / ¥800</span></li>
+                <li><span>Ikkomon Highball, 280 ml <small lang="ja">一刻者ハイボール</small></span><span>¥850</span></li>
+                <li><span>Osumi — sweet potato, 900 ml / glass <small lang="ja">大隅（芋）</small></span><span>¥3,700 / ¥600</span></li>
+                <li><span>Kurokame — sweet potato, 720 ml / glass <small lang="ja">黒甕</small></span><span>¥3,700 / ¥600</span></li>
+                <li><span>Gokujo Takara Shochu, 700 ml <small lang="ja">極上宝焼酎</small></span><span>¥3,500</span></li>
+                <li><span>Den'en Gold — barley, 720 ml <small lang="ja">田苑 GOLD</small></span><span>¥4,000</span></li>
+                <li><span>Osumi — barley, 900 ml / glass <small lang="ja">大隅（麦）</small></span><span>¥3,700 / ¥600</span></li>
+                <li><span>Shiranui — barley, 720 ml / glass <small lang="ja">不知火</small></span><span>¥5,500 / ¥800</span></li>
+              </ul>
+              <p class="en-drink-note">Mixers: soda water ¥300 / lemon slices (5) ¥400 / pitcher of tea ¥500 / pickled plum (1) ¥500</p>
+            </div>
+            <div class="en-drink-card reveal">
+              <h5 class="en-drink-title">Beer &amp; Non-alcoholic Beer</h5>
+              <ul class="en-drink-list">
+                <li><span>Draft beer — The Premium Malt's, medium / small <small lang="ja">生ビール</small></span><span>¥750 / ¥650</span></li>
+                <li><span>Bottled beer — The Premium Malt's, medium bottle <small lang="ja">瓶ビール</small></span><span>¥750</span></li>
+                <li><span>All-Free (non-alcoholic) — small bottle <small lang="ja">オールフリー</small></span><span>¥600</span></li>
+                <li><span>All-Free (non-alcoholic) — draft mug</span><span>¥600</span></li>
+              </ul>
+            </div>
+            <div class="en-drink-card reveal">
+              <h5 class="en-drink-title">Highball, Gin &amp; Wine</h5>
+              <ul class="en-drink-list">
+                <li><span>Kaku Highball (whisky &amp; soda) <small lang="ja">角ハイボール</small></span><span>¥700</span></li>
+                <li><span>Roku Gin &amp; Soda <small lang="ja">六ジンソーダ</small></span><span>¥780</span></li>
+                <li><span>Glass of wine — red / white <small lang="ja">グラスワイン</small></span><span>¥750</span></li>
+                <li><span>Bottle of wine — red / white <small lang="ja">フルボトルワイン</small></span><span>¥4,500</span></li>
+              </ul>
+            </div>
+            <div class="en-drink-card reveal">
+              <h5 class="en-drink-title">Sours &amp; Fruit Liqueurs</h5>
+              <ul class="en-drink-list">
+                <li><span>Black Oolong Highball <small lang="ja">黒ウーロンハイ</small></span><span>¥800</span></li>
+                <li><span>Lemon / Yuzu / Green Apple / Kyoho Grape / Grapefruit Sour <small lang="ja">サワー各種</small></span><span>¥700</span></li>
+                <li><span>Oolong Highball / Uji Matcha with Shochu <small lang="ja">ウーロンハイ・宇治抹茶割り</small></span><span>¥700</span></li>
+                <li><span>Apricot Liqueur / Plum Wine (umeshu) <small lang="ja">あんず酒・梅酒</small></span><span>¥700</span></li>
+              </ul>
+              <p class="en-drink-note">Liqueurs: on the rocks, with water or with soda.</p>
+            </div>
+            <div class="en-drink-card reveal">
+              <h5 class="en-drink-title">Soft Drinks</h5>
+              <ul class="en-drink-list">
+                <li><span>Black Oolong Tea <small lang="ja">黒ウーロン茶</small></span><span>¥500</span></li>
+                <li><span>Oolong Tea / Lemon-lime Soda / Coca-Cola / Ginger Ale / Orange Juice / Apple Juice <small lang="ja">ソフトドリンク</small></span><span>¥300</span></li>
+              </ul>
+            </div>
+          </div>
+          <p class="menu-note">
+            All prices include tax.
+          </p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer" role="contentinfo">
